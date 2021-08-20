@@ -1,0 +1,5 @@
+server=android-cloud-hrbuddy.ca81skjjo1cv.ap-southeast-1.rds.amazonaws.com
+user id=jayreyes
+password=password2020
+database=hrbuddy
+port=3306
