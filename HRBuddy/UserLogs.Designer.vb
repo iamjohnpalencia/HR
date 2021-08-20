@@ -52,7 +52,7 @@ Partial Class UserLogs
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel122 = New System.Windows.Forms.Panel()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
@@ -90,9 +90,9 @@ Partial Class UserLogs
         'StatusStrip1
         '
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1, Me.ToolStripProgressBar1})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 595)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 591)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(994, 22)
+        Me.StatusStrip1.Size = New System.Drawing.Size(990, 22)
         Me.StatusStrip1.TabIndex = 7
         Me.StatusStrip1.Text = "StatusStrip1"
         '
@@ -113,7 +113,7 @@ Partial Class UserLogs
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel1, Me.ToolStripSeparator3, Me.ToolStripSeparator2, Me.HelpToolStripButton, Me.ToolStripButton2})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(994, 25)
+        Me.ToolStrip1.Size = New System.Drawing.Size(990, 25)
         Me.ToolStrip1.TabIndex = 8
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -165,7 +165,7 @@ Partial Class UserLogs
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersVisible = False
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(980, 488)
+        Me.DataGridView1.Size = New System.Drawing.Size(976, 484)
         Me.DataGridView1.TabIndex = 9
         '
         'Column1
@@ -251,18 +251,18 @@ Partial Class UserLogs
         Me.TabControl1.Location = New System.Drawing.Point(0, 25)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(994, 570)
+        Me.TabControl1.Size = New System.Drawing.Size(990, 566)
         Me.TabControl1.TabIndex = 10
         '
         'TabPage1
         '
         Me.TabPage1.Controls.Add(Me.DataGridView1)
         Me.TabPage1.Controls.Add(Me.Panel2)
-        Me.TabPage1.Controls.Add(Me.Panel1)
+        Me.TabPage1.Controls.Add(Me.Panel122)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(986, 544)
+        Me.TabPage1.Size = New System.Drawing.Size(982, 540)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Action Logs"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -270,18 +270,18 @@ Partial Class UserLogs
         'Panel2
         '
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel2.Location = New System.Drawing.Point(3, 516)
+        Me.Panel2.Location = New System.Drawing.Point(3, 512)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(980, 25)
+        Me.Panel2.Size = New System.Drawing.Size(976, 25)
         Me.Panel2.TabIndex = 11
         '
-        'Panel1
+        'Panel122
         '
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel1.Location = New System.Drawing.Point(3, 3)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(980, 25)
-        Me.Panel1.TabIndex = 10
+        Me.Panel122.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel122.Location = New System.Drawing.Point(3, 3)
+        Me.Panel122.Name = "Panel122"
+        Me.Panel122.Size = New System.Drawing.Size(976, 25)
+        Me.Panel122.TabIndex = 10
         '
         'TabPage2
         '
@@ -292,7 +292,7 @@ Partial Class UserLogs
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(990, 548)
+        Me.TabPage2.Size = New System.Drawing.Size(986, 544)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "IN/OUT Logs"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -316,11 +316,11 @@ Partial Class UserLogs
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn11, Me.DataGridViewTextBoxColumn12, Me.DataGridViewTextBoxColumn13})
         Me.DataGridView2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.DataGridView2.Location = New System.Drawing.Point(230, 28)
+        Me.DataGridView2.Location = New System.Drawing.Point(226, 28)
         Me.DataGridView2.Name = "DataGridView2"
         Me.DataGridView2.RowHeadersVisible = False
         Me.DataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView2.Size = New System.Drawing.Size(757, 492)
+        Me.DataGridView2.Size = New System.Drawing.Size(757, 488)
         Me.DataGridView2.TabIndex = 12
         '
         'DataGridViewTextBoxColumn1
@@ -391,9 +391,9 @@ Partial Class UserLogs
         'Panel3
         '
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel3.Location = New System.Drawing.Point(3, 520)
+        Me.Panel3.Location = New System.Drawing.Point(3, 516)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(984, 25)
+        Me.Panel3.Size = New System.Drawing.Size(980, 25)
         Me.Panel3.TabIndex = 14
         '
         'Panel4
@@ -401,7 +401,7 @@ Partial Class UserLogs
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel4.Location = New System.Drawing.Point(3, 3)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(984, 25)
+        Me.Panel4.Size = New System.Drawing.Size(980, 25)
         Me.Panel4.TabIndex = 13
         '
         'UserLogs
@@ -409,7 +409,7 @@ Partial Class UserLogs
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(994, 617)
+        Me.ClientSize = New System.Drawing.Size(990, 613)
         Me.ControlBox = False
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.ToolStrip1)
@@ -453,7 +453,7 @@ Partial Class UserLogs
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Panel122 As Panel
     Friend WithEvents DataGridView2 As DataGridView
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Panel4 As Panel
