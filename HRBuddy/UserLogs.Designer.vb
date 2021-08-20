@@ -52,7 +52,7 @@ Partial Class UserLogs
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Panel122 = New System.Windows.Forms.Panel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
@@ -258,7 +258,7 @@ Partial Class UserLogs
         '
         Me.TabPage1.Controls.Add(Me.DataGridView1)
         Me.TabPage1.Controls.Add(Me.Panel2)
-        Me.TabPage1.Controls.Add(Me.Panel122)
+        Me.TabPage1.Controls.Add(Me.Panel1)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
@@ -275,13 +275,13 @@ Partial Class UserLogs
         Me.Panel2.Size = New System.Drawing.Size(976, 25)
         Me.Panel2.TabIndex = 11
         '
-        'Panel122
+        'Panel1
         '
-        Me.Panel122.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel122.Location = New System.Drawing.Point(3, 3)
-        Me.Panel122.Name = "Panel122"
-        Me.Panel122.Size = New System.Drawing.Size(976, 25)
-        Me.Panel122.TabIndex = 10
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.Location = New System.Drawing.Point(3, 3)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(976, 25)
+        Me.Panel1.TabIndex = 10
         '
         'TabPage2
         '
@@ -453,7 +453,7 @@ Partial Class UserLogs
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents Panel122 As Panel
+    Friend WithEvents Panel1 As Panel
     Friend WithEvents DataGridView2 As DataGridView
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Panel4 As Panel
