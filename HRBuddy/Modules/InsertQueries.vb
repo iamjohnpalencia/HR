@@ -29,6 +29,7 @@ Module InsertQueries
 
             Dim ConnectionLocal As MySqlConnection = ServerCloudCon()
             sql = "INSERT INTO " & Table & "(" & Fields & ") VALUES (" & Values & ")"
+
             Dim cmd As MySqlCommand = New MySqlCommand(sql, ConnectionLocal)
             cmd.ExecuteNonQuery()
 

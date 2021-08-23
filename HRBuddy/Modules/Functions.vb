@@ -91,4 +91,52 @@ Module Functions
         End Try
         Return DateNow
     End Function
+    Public Sub TextboxReadOnly(ByVal root As Control, ENB As Boolean)
+        For Each ctrl As Control In root.Controls
+            TextboxReadOnly(ctrl, ENB)
+            If TypeOf ctrl Is TextBox Then
+                CType(ctrl, TextBox).ReadOnly = ENB
+            End If
+        Next ctrl
+    End Sub
+    Public Sub MaskedTextboxReadOnly(ByVal root As Control, ENB As Boolean)
+        For Each ctrl As Control In root.Controls
+            MaskedTextboxReadOnly(ctrl, ENB)
+            If TypeOf ctrl Is MaskedTextBox Then
+                CType(ctrl, MaskedTextBox).ReadOnly = ENB
+            End If
+        Next ctrl
+    End Sub
+    Public Sub DateTimePickerEnabled(ByVal root As Control, ENB As Boolean)
+        For Each ctrl As Control In root.Controls
+            DateTimePickerEnabled(ctrl, ENB)
+            If TypeOf ctrl Is DateTimePicker Then
+                CType(ctrl, DateTimePicker).Enabled = ENB
+            End If
+        Next ctrl
+    End Sub
+    Public Sub TextBoxClear(ByVal root As Control)
+        For Each ctrl As Control In root.Controls
+            TextBoxClear(ctrl)
+            If TypeOf ctrl Is TextBox Then
+                CType(ctrl, TextBox).Text = String.Empty
+            End If
+        Next ctrl
+    End Sub
+    Public Sub MaskedTextBoxClear(ByVal root As Control)
+        For Each ctrl As Control In root.Controls
+            MaskedTextBoxClear(ctrl)
+            If TypeOf ctrl Is MaskedTextBox Then
+                CType(ctrl, MaskedTextBox).Text = String.Empty
+            End If
+        Next ctrl
+    End Sub
+    Public Sub DateTimePickerDefault(ByVal root As Control)
+        For Each ctrl As Control In root.Controls
+            DateTimePickerDefault(ctrl)
+            If TypeOf ctrl Is DateTimePicker Then
+                CType(ctrl, DateTimePicker).Value = Today
+            End If
+        Next ctrl
+    End Sub
 End Module

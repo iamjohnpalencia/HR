@@ -30,4 +30,7 @@
     Public UPDATEDEPARTMENTDETAILS As Boolean = False
     Public UPDATETEAMNAMEDETAILS As Boolean = False
 
+    'GetEmpCode
+    Public PIEMPLOYEECODE As Integer = 0
+
 End Module

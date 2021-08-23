@@ -249,4 +249,23 @@ Module SelectQueries
         End Try
         Return dttable
     End Function
+    Public Function EmpCode() As Integer
+        Dim ReturnUsername As Integer = 0
+        Try
+            Dim ConnectionLocal As MySqlConnection = ServerCloudCon()
+            Dim sql = "SELECT empid FROM tblemployee ORDER BY empid desc LIMIT 1 "
+            Dim cmd As MySqlCommand = New MySqlCommand(sql, ConnectionLocal)
+            Using reader As MySqlDataReader = cmd.ExecuteReader()
+                If reader.HasRows Then
+                    While reader.Read
+                        ReturnUsername = reader("empid")
+                        PIEMPLOYEECODE = ReturnUsername + 1
+                    End While
+                End If
+            End Using
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+        Return PIEMPLOYEECODE
+    End Function
 End Module

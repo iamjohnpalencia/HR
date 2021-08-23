@@ -36,19 +36,23 @@ Partial Class frmEmployee
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
         Me.Panel10 = New System.Windows.Forms.Panel()
-        Me.TextBox13 = New System.Windows.Forms.TextBox()
-        Me.TextBox11 = New System.Windows.Forms.TextBox()
-        Me.TextBox9 = New System.Windows.Forms.TextBox()
-        Me.TextBox12 = New System.Windows.Forms.TextBox()
-        Me.TextBox15 = New System.Windows.Forms.TextBox()
-        Me.TextBox14 = New System.Windows.Forms.TextBox()
-        Me.TextBox10 = New System.Windows.Forms.TextBox()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
+        Me.TextBoxPIMothersName = New System.Windows.Forms.TextBox()
+        Me.TextBoxPIMothersOccupation = New System.Windows.Forms.TextBox()
+        Me.TextBoxPIFathersName = New System.Windows.Forms.TextBox()
+        Me.TextBoxPIFathersOccupation = New System.Windows.Forms.TextBox()
+        Me.TextBoxPISpouse = New System.Windows.Forms.TextBox()
+        Me.TextBoxPISpouseOccupation = New System.Windows.Forms.TextBox()
+        Me.TextBoxPiEmergency = New System.Windows.Forms.TextBox()
+        Me.TextBoxPIEmergencyContact = New System.Windows.Forms.TextBox()
         Me.Label25 = New System.Windows.Forms.Label()
         Me.Label23 = New System.Windows.Forms.Label()
         Me.Label21 = New System.Windows.Forms.Label()
@@ -61,56 +65,57 @@ Partial Class frmEmployee
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.Label44 = New System.Windows.Forms.Label()
-        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
+        Me.ComboBoxPIGroup = New System.Windows.Forms.ComboBox()
         Me.Label70 = New System.Windows.Forms.Label()
-        Me.DateTimePicker3 = New System.Windows.Forms.DateTimePicker()
+        Me.DateTimePickerPIDateHired = New System.Windows.Forms.DateTimePicker()
         Me.Label71 = New System.Windows.Forms.Label()
         Me.Label47 = New System.Windows.Forms.Label()
-        Me.TextBox25 = New System.Windows.Forms.TextBox()
-        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
+        Me.TextBoxPISalary = New System.Windows.Forms.TextBox()
+        Me.DateTimePickerPIAppraisal = New System.Windows.Forms.DateTimePicker()
         Me.Label45 = New System.Windows.Forms.Label()
         Me.Label46 = New System.Windows.Forms.Label()
-        Me.TextBox26 = New System.Windows.Forms.TextBox()
+        Me.TextBoxPIDesignation = New System.Windows.Forms.TextBox()
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.Label27 = New System.Windows.Forms.Label()
         Me.Label28 = New System.Windows.Forms.Label()
         Me.Label29 = New System.Windows.Forms.Label()
         Me.Label30 = New System.Windows.Forms.Label()
-        Me.MaskedTextBox1 = New System.Windows.Forms.MaskedTextBox()
-        Me.MaskedTextBox2 = New System.Windows.Forms.MaskedTextBox()
-        Me.MaskedTextBox4 = New System.Windows.Forms.MaskedTextBox()
-        Me.MaskedTextBox3 = New System.Windows.Forms.MaskedTextBox()
+        Me.MaskedTextBoxPIPHIL = New System.Windows.Forms.MaskedTextBox()
+        Me.MaskedTextBoxPITIN = New System.Windows.Forms.MaskedTextBox()
+        Me.MaskedTextBoxPISSS = New System.Windows.Forms.MaskedTextBox()
+        Me.MaskedTextBoxPIPagIbig = New System.Windows.Forms.MaskedTextBox()
         Me.Panel9 = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.TextBoxPIAddress1 = New System.Windows.Forms.TextBox()
+        Me.TextBoxPIAddress2 = New System.Windows.Forms.TextBox()
+        Me.DateTimePickerPIBDate = New System.Windows.Forms.DateTimePicker()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.TextBoxPIFirst = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TextBoxPIMid = New System.Windows.Forms.TextBox()
+        Me.TextBoxPIAge = New System.Windows.Forms.TextBox()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TextBoxPILastName = New System.Windows.Forms.TextBox()
+        Me.TextBoxPIContact = New System.Windows.Forms.TextBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.TextBoxPIImage = New System.Windows.Forms.TextBox()
         Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PictureBoxPIImage = New System.Windows.Forms.PictureBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
@@ -120,6 +125,8 @@ Partial Class frmEmployee
         Me.ToolStripButton4 = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripButton5 = New System.Windows.Forms.ToolStripButton()
         Me.BackgroundWorkerpersonalinfo = New System.ComponentModel.BackgroundWorker()
+        Me.BackgroundWorkerPISave = New System.ComponentModel.BackgroundWorker()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.ToolStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -140,7 +147,7 @@ Partial Class frmEmployee
         Me.Panel5.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel4.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBoxPIImage, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip2.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -244,13 +251,42 @@ Partial Class frmEmployee
         '
         'DataGridView1
         '
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
+        Me.DataGridView1.AllowUserToResizeColumns = False
+        Me.DataGridView1.AllowUserToResizeRows = False
+        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4})
         Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.DataGridView1.Location = New System.Drawing.Point(3, 28)
         Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.RowHeadersVisible = False
+        Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView1.Size = New System.Drawing.Size(216, 582)
         Me.DataGridView1.TabIndex = 1
+        '
+        'Column1
+        '
+        Me.Column1.HeaderText = "Column1"
+        Me.Column1.Name = "Column1"
+        '
+        'Column2
+        '
+        Me.Column2.HeaderText = "Column2"
+        Me.Column2.Name = "Column2"
+        '
+        'Column3
+        '
+        Me.Column3.HeaderText = "Column3"
+        Me.Column3.Name = "Column3"
+        '
+        'Column4
+        '
+        Me.Column4.HeaderText = "Column4"
+        Me.Column4.Name = "Column4"
         '
         'Panel2
         '
@@ -294,131 +330,139 @@ Partial Class frmEmployee
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel4.Controls.Add(Me.Panel10, 0, 0)
         Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel4.Location = New System.Drawing.Point(3, 400)
+        Me.TableLayoutPanel4.Location = New System.Drawing.Point(3, 388)
         Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
         Me.TableLayoutPanel4.RowCount = 1
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel4.Size = New System.Drawing.Size(772, 159)
+        Me.TableLayoutPanel4.Size = New System.Drawing.Size(772, 171)
         Me.TableLayoutPanel4.TabIndex = 4
         '
         'Panel10
         '
-        Me.Panel10.Controls.Add(Me.TextBox13)
-        Me.Panel10.Controls.Add(Me.TextBox11)
-        Me.Panel10.Controls.Add(Me.TextBox9)
-        Me.Panel10.Controls.Add(Me.TextBox12)
-        Me.Panel10.Controls.Add(Me.TextBox15)
-        Me.Panel10.Controls.Add(Me.TextBox14)
-        Me.Panel10.Controls.Add(Me.TextBox10)
-        Me.Panel10.Controls.Add(Me.TextBox8)
-        Me.Panel10.Controls.Add(Me.Label25)
-        Me.Panel10.Controls.Add(Me.Label23)
+        Me.Panel10.Controls.Add(Me.TextBoxPIMothersName)
+        Me.Panel10.Controls.Add(Me.Label19)
         Me.Panel10.Controls.Add(Me.Label21)
+        Me.Panel10.Controls.Add(Me.TextBoxPIMothersOccupation)
+        Me.Panel10.Controls.Add(Me.Label23)
+        Me.Panel10.Controls.Add(Me.TextBoxPIFathersName)
+        Me.Panel10.Controls.Add(Me.Label25)
+        Me.Panel10.Controls.Add(Me.TextBoxPIFathersOccupation)
+        Me.Panel10.Controls.Add(Me.TextBoxPISpouse)
+        Me.Panel10.Controls.Add(Me.TextBoxPISpouseOccupation)
+        Me.Panel10.Controls.Add(Me.TextBoxPiEmergency)
+        Me.Panel10.Controls.Add(Me.TextBoxPIEmergencyContact)
         Me.Panel10.Controls.Add(Me.Label24)
         Me.Panel10.Controls.Add(Me.Label22)
-        Me.Panel10.Controls.Add(Me.Label19)
         Me.Panel10.Controls.Add(Me.Label20)
         Me.Panel10.Controls.Add(Me.Label18)
         Me.Panel10.Controls.Add(Me.Panel11)
         Me.Panel10.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel10.Location = New System.Drawing.Point(3, 3)
         Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(766, 153)
+        Me.Panel10.Size = New System.Drawing.Size(766, 165)
         Me.Panel10.TabIndex = 0
         '
-        'TextBox13
+        'TextBoxPIMothersName
         '
-        Me.TextBox13.BackColor = System.Drawing.SystemColors.Control
-        Me.TextBox13.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox13.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.TextBox13.Location = New System.Drawing.Point(150, 32)
-        Me.TextBox13.Name = "TextBox13"
-        Me.TextBox13.Size = New System.Drawing.Size(307, 16)
-        Me.TextBox13.TabIndex = 33
+        Me.TextBoxPIMothersName.BackColor = System.Drawing.SystemColors.Control
+        Me.TextBoxPIMothersName.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBoxPIMothersName.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.TextBoxPIMothersName.Location = New System.Drawing.Point(150, 32)
+        Me.TextBoxPIMothersName.Name = "TextBoxPIMothersName"
+        Me.TextBoxPIMothersName.ReadOnly = True
+        Me.TextBoxPIMothersName.Size = New System.Drawing.Size(307, 16)
+        Me.TextBoxPIMothersName.TabIndex = 33
         '
-        'TextBox11
+        'TextBoxPIMothersOccupation
         '
-        Me.TextBox11.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.TextBoxPIMothersOccupation.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox11.BackColor = System.Drawing.SystemColors.Control
-        Me.TextBox11.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox11.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.TextBox11.Location = New System.Drawing.Point(550, 33)
-        Me.TextBox11.Name = "TextBox11"
-        Me.TextBox11.Size = New System.Drawing.Size(197, 16)
-        Me.TextBox11.TabIndex = 34
+        Me.TextBoxPIMothersOccupation.BackColor = System.Drawing.SystemColors.Control
+        Me.TextBoxPIMothersOccupation.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBoxPIMothersOccupation.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.TextBoxPIMothersOccupation.Location = New System.Drawing.Point(549, 32)
+        Me.TextBoxPIMothersOccupation.Name = "TextBoxPIMothersOccupation"
+        Me.TextBoxPIMothersOccupation.ReadOnly = True
+        Me.TextBoxPIMothersOccupation.Size = New System.Drawing.Size(197, 16)
+        Me.TextBoxPIMothersOccupation.TabIndex = 34
         '
-        'TextBox9
+        'TextBoxPIFathersName
         '
-        Me.TextBox9.BackColor = System.Drawing.SystemColors.Control
-        Me.TextBox9.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox9.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.TextBox9.Location = New System.Drawing.Point(150, 54)
-        Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.Size = New System.Drawing.Size(307, 16)
-        Me.TextBox9.TabIndex = 35
+        Me.TextBoxPIFathersName.BackColor = System.Drawing.SystemColors.Control
+        Me.TextBoxPIFathersName.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBoxPIFathersName.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.TextBoxPIFathersName.Location = New System.Drawing.Point(150, 59)
+        Me.TextBoxPIFathersName.Name = "TextBoxPIFathersName"
+        Me.TextBoxPIFathersName.ReadOnly = True
+        Me.TextBoxPIFathersName.Size = New System.Drawing.Size(307, 16)
+        Me.TextBoxPIFathersName.TabIndex = 35
         '
-        'TextBox12
+        'TextBoxPIFathersOccupation
         '
-        Me.TextBox12.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.TextBoxPIFathersOccupation.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox12.BackColor = System.Drawing.SystemColors.Control
-        Me.TextBox12.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox12.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.TextBox12.Location = New System.Drawing.Point(550, 55)
-        Me.TextBox12.Name = "TextBox12"
-        Me.TextBox12.Size = New System.Drawing.Size(197, 16)
-        Me.TextBox12.TabIndex = 36
+        Me.TextBoxPIFathersOccupation.BackColor = System.Drawing.SystemColors.Control
+        Me.TextBoxPIFathersOccupation.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBoxPIFathersOccupation.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.TextBoxPIFathersOccupation.Location = New System.Drawing.Point(549, 59)
+        Me.TextBoxPIFathersOccupation.Name = "TextBoxPIFathersOccupation"
+        Me.TextBoxPIFathersOccupation.ReadOnly = True
+        Me.TextBoxPIFathersOccupation.Size = New System.Drawing.Size(197, 16)
+        Me.TextBoxPIFathersOccupation.TabIndex = 36
         '
-        'TextBox15
+        'TextBoxPISpouse
         '
-        Me.TextBox15.BackColor = System.Drawing.SystemColors.Control
-        Me.TextBox15.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox15.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.TextBox15.Location = New System.Drawing.Point(150, 76)
-        Me.TextBox15.Name = "TextBox15"
-        Me.TextBox15.Size = New System.Drawing.Size(307, 16)
-        Me.TextBox15.TabIndex = 37
+        Me.TextBoxPISpouse.BackColor = System.Drawing.SystemColors.Control
+        Me.TextBoxPISpouse.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBoxPISpouse.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.TextBoxPISpouse.Location = New System.Drawing.Point(150, 86)
+        Me.TextBoxPISpouse.Name = "TextBoxPISpouse"
+        Me.TextBoxPISpouse.ReadOnly = True
+        Me.TextBoxPISpouse.Size = New System.Drawing.Size(307, 16)
+        Me.TextBoxPISpouse.TabIndex = 37
         '
-        'TextBox14
+        'TextBoxPISpouseOccupation
         '
-        Me.TextBox14.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.TextBoxPISpouseOccupation.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox14.BackColor = System.Drawing.SystemColors.Control
-        Me.TextBox14.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox14.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.TextBox14.Location = New System.Drawing.Point(550, 77)
-        Me.TextBox14.Name = "TextBox14"
-        Me.TextBox14.Size = New System.Drawing.Size(197, 16)
-        Me.TextBox14.TabIndex = 38
+        Me.TextBoxPISpouseOccupation.BackColor = System.Drawing.SystemColors.Control
+        Me.TextBoxPISpouseOccupation.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBoxPISpouseOccupation.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.TextBoxPISpouseOccupation.Location = New System.Drawing.Point(550, 86)
+        Me.TextBoxPISpouseOccupation.Name = "TextBoxPISpouseOccupation"
+        Me.TextBoxPISpouseOccupation.ReadOnly = True
+        Me.TextBoxPISpouseOccupation.Size = New System.Drawing.Size(197, 16)
+        Me.TextBoxPISpouseOccupation.TabIndex = 38
         '
-        'TextBox10
+        'TextBoxPiEmergency
         '
-        Me.TextBox10.BackColor = System.Drawing.SystemColors.Control
-        Me.TextBox10.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox10.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.TextBox10.Location = New System.Drawing.Point(150, 98)
-        Me.TextBox10.Name = "TextBox10"
-        Me.TextBox10.Size = New System.Drawing.Size(307, 16)
-        Me.TextBox10.TabIndex = 39
+        Me.TextBoxPiEmergency.BackColor = System.Drawing.SystemColors.Control
+        Me.TextBoxPiEmergency.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBoxPiEmergency.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.TextBoxPiEmergency.Location = New System.Drawing.Point(150, 113)
+        Me.TextBoxPiEmergency.Name = "TextBoxPiEmergency"
+        Me.TextBoxPiEmergency.ReadOnly = True
+        Me.TextBoxPiEmergency.Size = New System.Drawing.Size(307, 16)
+        Me.TextBoxPiEmergency.TabIndex = 39
         '
-        'TextBox8
+        'TextBoxPIEmergencyContact
         '
-        Me.TextBox8.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.TextBoxPIEmergencyContact.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox8.BackColor = System.Drawing.SystemColors.Control
-        Me.TextBox8.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox8.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.TextBox8.Location = New System.Drawing.Point(550, 99)
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(197, 16)
-        Me.TextBox8.TabIndex = 40
+        Me.TextBoxPIEmergencyContact.BackColor = System.Drawing.SystemColors.Control
+        Me.TextBoxPIEmergencyContact.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBoxPIEmergencyContact.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.TextBoxPIEmergencyContact.Location = New System.Drawing.Point(550, 113)
+        Me.TextBoxPIEmergencyContact.Name = "TextBoxPIEmergencyContact"
+        Me.TextBoxPIEmergencyContact.ReadOnly = True
+        Me.TextBoxPIEmergencyContact.Size = New System.Drawing.Size(197, 16)
+        Me.TextBoxPIEmergencyContact.TabIndex = 40
         '
         'Label25
         '
         Me.Label25.AutoSize = True
         Me.Label25.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Label25.Location = New System.Drawing.Point(477, 98)
+        Me.Label25.Location = New System.Drawing.Point(474, 113)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(59, 15)
         Me.Label25.TabIndex = 25
@@ -428,7 +472,7 @@ Partial Class frmEmployee
         '
         Me.Label23.AutoSize = True
         Me.Label23.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Label23.Location = New System.Drawing.Point(475, 78)
+        Me.Label23.Location = New System.Drawing.Point(474, 86)
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(69, 15)
         Me.Label23.TabIndex = 26
@@ -438,7 +482,7 @@ Partial Class frmEmployee
         '
         Me.Label21.AutoSize = True
         Me.Label21.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Label21.Location = New System.Drawing.Point(475, 54)
+        Me.Label21.Location = New System.Drawing.Point(474, 59)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(69, 15)
         Me.Label21.TabIndex = 27
@@ -448,7 +492,7 @@ Partial Class frmEmployee
         '
         Me.Label24.AutoSize = True
         Me.Label24.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Label24.Location = New System.Drawing.Point(18, 99)
+        Me.Label24.Location = New System.Drawing.Point(18, 114)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(111, 15)
         Me.Label24.TabIndex = 28
@@ -458,7 +502,7 @@ Partial Class frmEmployee
         '
         Me.Label22.AutoSize = True
         Me.Label22.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Label22.Location = New System.Drawing.Point(19, 77)
+        Me.Label22.Location = New System.Drawing.Point(19, 87)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(80, 15)
         Me.Label22.TabIndex = 29
@@ -468,7 +512,7 @@ Partial Class frmEmployee
         '
         Me.Label19.AutoSize = True
         Me.Label19.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Label19.Location = New System.Drawing.Point(475, 33)
+        Me.Label19.Location = New System.Drawing.Point(474, 32)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(69, 15)
         Me.Label19.TabIndex = 30
@@ -478,7 +522,7 @@ Partial Class frmEmployee
         '
         Me.Label20.AutoSize = True
         Me.Label20.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Label20.Location = New System.Drawing.Point(19, 55)
+        Me.Label20.Location = New System.Drawing.Point(19, 60)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(80, 15)
         Me.Label20.TabIndex = 31
@@ -537,29 +581,45 @@ Partial Class frmEmployee
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel3.Size = New System.Drawing.Size(772, 204)
+        Me.TableLayoutPanel3.Size = New System.Drawing.Size(772, 192)
         Me.TableLayoutPanel3.TabIndex = 3
         '
         'Panel6
         '
+        Me.Panel6.Controls.Add(Me.ComboBox1)
         Me.Panel6.Controls.Add(Me.Panel7)
-        Me.Panel6.Controls.Add(Me.ComboBox2)
         Me.Panel6.Controls.Add(Me.Label44)
-        Me.Panel6.Controls.Add(Me.ComboBox3)
+        Me.Panel6.Controls.Add(Me.ComboBoxPIGroup)
         Me.Panel6.Controls.Add(Me.Label70)
-        Me.Panel6.Controls.Add(Me.DateTimePicker3)
+        Me.Panel6.Controls.Add(Me.DateTimePickerPIDateHired)
         Me.Panel6.Controls.Add(Me.Label71)
         Me.Panel6.Controls.Add(Me.Label47)
-        Me.Panel6.Controls.Add(Me.TextBox25)
-        Me.Panel6.Controls.Add(Me.DateTimePicker2)
+        Me.Panel6.Controls.Add(Me.TextBoxPISalary)
+        Me.Panel6.Controls.Add(Me.DateTimePickerPIAppraisal)
         Me.Panel6.Controls.Add(Me.Label45)
         Me.Panel6.Controls.Add(Me.Label46)
-        Me.Panel6.Controls.Add(Me.TextBox26)
+        Me.Panel6.Controls.Add(Me.TextBoxPIDesignation)
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel6.Location = New System.Drawing.Point(3, 3)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(766, 96)
+        Me.Panel6.Size = New System.Drawing.Size(766, 90)
         Me.Panel6.TabIndex = 0
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ComboBox1.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ComboBox1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.ComboBox1.ForeColor = System.Drawing.Color.Black
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"Active", "Resigned", "Suspended", "Terminated"})
+        Me.ComboBox1.Location = New System.Drawing.Point(551, 62)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(196, 23)
+        Me.ComboBox1.TabIndex = 2
         '
         'Panel7
         '
@@ -584,136 +644,124 @@ Partial Class frmEmployee
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "COMPANY DETAIL RELATED"
         '
-        'ComboBox2
-        '
-        Me.ComboBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ComboBox2.BackColor = System.Drawing.SystemColors.Control
-        Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ComboBox2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.ComboBox2.ForeColor = System.Drawing.Color.Black
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Items.AddRange(New Object() {"Daily", "Fixed"})
-        Me.ComboBox2.Location = New System.Drawing.Point(550, 59)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(197, 23)
-        Me.ComboBox2.TabIndex = 30
-        '
         'Label44
         '
         Me.Label44.AutoSize = True
-        Me.Label44.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label44.Location = New System.Drawing.Point(19, 35)
+        Me.Label44.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Label44.Location = New System.Drawing.Point(6, 34)
         Me.Label44.Name = "Label44"
-        Me.Label44.Size = New System.Drawing.Size(71, 15)
+        Me.Label44.Size = New System.Drawing.Size(70, 15)
         Me.Label44.TabIndex = 35
         Me.Label44.Text = "Designation"
         '
-        'ComboBox3
+        'ComboBoxPIGroup
         '
-        Me.ComboBox3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.ComboBoxPIGroup.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ComboBox3.BackColor = System.Drawing.SystemColors.Control
-        Me.ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ComboBox3.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.ComboBox3.ForeColor = System.Drawing.Color.Black
-        Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Location = New System.Drawing.Point(550, 28)
-        Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(197, 23)
-        Me.ComboBox3.TabIndex = 31
+        Me.ComboBoxPIGroup.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.ComboBoxPIGroup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBoxPIGroup.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ComboBoxPIGroup.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.ComboBoxPIGroup.ForeColor = System.Drawing.Color.Black
+        Me.ComboBoxPIGroup.FormattingEnabled = True
+        Me.ComboBoxPIGroup.Location = New System.Drawing.Point(550, 33)
+        Me.ComboBoxPIGroup.Name = "ComboBoxPIGroup"
+        Me.ComboBoxPIGroup.Size = New System.Drawing.Size(197, 23)
+        Me.ComboBoxPIGroup.TabIndex = 31
         '
         'Label70
         '
         Me.Label70.AutoSize = True
-        Me.Label70.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label70.Location = New System.Drawing.Point(505, 31)
+        Me.Label70.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Label70.Location = New System.Drawing.Point(506, 33)
         Me.Label70.Name = "Label70"
-        Me.Label70.Size = New System.Drawing.Size(39, 15)
+        Me.Label70.Size = New System.Drawing.Size(40, 15)
         Me.Label70.TabIndex = 34
         Me.Label70.Text = "Group"
         '
-        'DateTimePicker3
+        'DateTimePickerPIDateHired
         '
-        Me.DateTimePicker3.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right
-        Me.DateTimePicker3.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.DateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker3.Location = New System.Drawing.Point(351, 29)
-        Me.DateTimePicker3.Name = "DateTimePicker3"
-        Me.DateTimePicker3.Size = New System.Drawing.Size(148, 23)
-        Me.DateTimePicker3.TabIndex = 28
+        Me.DateTimePickerPIDateHired.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right
+        Me.DateTimePickerPIDateHired.Enabled = False
+        Me.DateTimePickerPIDateHired.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.DateTimePickerPIDateHired.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DateTimePickerPIDateHired.Location = New System.Drawing.Point(351, 33)
+        Me.DateTimePickerPIDateHired.Name = "DateTimePickerPIDateHired"
+        Me.DateTimePickerPIDateHired.Size = New System.Drawing.Size(148, 23)
+        Me.DateTimePickerPIDateHired.TabIndex = 28
         '
         'Label71
         '
         Me.Label71.AutoSize = True
-        Me.Label71.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label71.Location = New System.Drawing.Point(505, 61)
+        Me.Label71.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Label71.Location = New System.Drawing.Point(506, 62)
         Me.Label71.Name = "Label71"
-        Me.Label71.Size = New System.Drawing.Size(40, 15)
+        Me.Label71.Size = New System.Drawing.Size(39, 15)
         Me.Label71.TabIndex = 33
         Me.Label71.Text = "Status"
         '
         'Label47
         '
         Me.Label47.AutoSize = True
-        Me.Label47.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label47.Location = New System.Drawing.Point(281, 62)
+        Me.Label47.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Label47.Location = New System.Drawing.Point(280, 62)
         Me.Label47.Name = "Label47"
-        Me.Label47.Size = New System.Drawing.Size(58, 15)
+        Me.Label47.Size = New System.Drawing.Size(56, 15)
         Me.Label47.TabIndex = 36
         Me.Label47.Text = "Appraisal"
         '
-        'TextBox25
+        'TextBoxPISalary
         '
-        Me.TextBox25.BackColor = System.Drawing.SystemColors.Control
-        Me.TextBox25.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox25.Font = New System.Drawing.Font("Arial Narrow", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox25.Location = New System.Drawing.Point(113, 58)
-        Me.TextBox25.Name = "TextBox25"
-        Me.TextBox25.Size = New System.Drawing.Size(159, 18)
-        Me.TextBox25.TabIndex = 27
+        Me.TextBoxPISalary.BackColor = System.Drawing.SystemColors.Control
+        Me.TextBoxPISalary.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBoxPISalary.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.TextBoxPISalary.Location = New System.Drawing.Point(113, 62)
+        Me.TextBoxPISalary.Name = "TextBoxPISalary"
+        Me.TextBoxPISalary.ReadOnly = True
+        Me.TextBoxPISalary.Size = New System.Drawing.Size(159, 16)
+        Me.TextBoxPISalary.TabIndex = 27
         '
-        'DateTimePicker2
+        'DateTimePickerPIAppraisal
         '
-        Me.DateTimePicker2.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right
-        Me.DateTimePicker2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker2.Location = New System.Drawing.Point(352, 58)
-        Me.DateTimePicker2.Name = "DateTimePicker2"
-        Me.DateTimePicker2.Size = New System.Drawing.Size(148, 23)
-        Me.DateTimePicker2.TabIndex = 29
+        Me.DateTimePickerPIAppraisal.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right
+        Me.DateTimePickerPIAppraisal.Enabled = False
+        Me.DateTimePickerPIAppraisal.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.DateTimePickerPIAppraisal.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DateTimePickerPIAppraisal.Location = New System.Drawing.Point(351, 62)
+        Me.DateTimePickerPIAppraisal.Name = "DateTimePickerPIAppraisal"
+        Me.DateTimePickerPIAppraisal.Size = New System.Drawing.Size(148, 23)
+        Me.DateTimePickerPIAppraisal.TabIndex = 29
         '
         'Label45
         '
         Me.Label45.AutoSize = True
-        Me.Label45.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label45.Location = New System.Drawing.Point(19, 61)
+        Me.Label45.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Label45.Location = New System.Drawing.Point(6, 62)
         Me.Label45.Name = "Label45"
-        Me.Label45.Size = New System.Drawing.Size(88, 15)
+        Me.Label45.Size = New System.Drawing.Size(85, 15)
         Me.Label45.TabIndex = 32
         Me.Label45.Text = "Salary Package"
         '
         'Label46
         '
         Me.Label46.AutoSize = True
-        Me.Label46.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label46.Location = New System.Drawing.Point(278, 33)
+        Me.Label46.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Label46.Location = New System.Drawing.Point(280, 34)
         Me.Label46.Name = "Label46"
-        Me.Label46.Size = New System.Drawing.Size(65, 15)
+        Me.Label46.Size = New System.Drawing.Size(63, 15)
         Me.Label46.TabIndex = 37
         Me.Label46.Text = "Date Hired"
         '
-        'TextBox26
+        'TextBoxPIDesignation
         '
-        Me.TextBox26.BackColor = System.Drawing.SystemColors.Control
-        Me.TextBox26.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox26.Font = New System.Drawing.Font("Arial Narrow", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox26.Location = New System.Drawing.Point(113, 29)
-        Me.TextBox26.Name = "TextBox26"
-        Me.TextBox26.Size = New System.Drawing.Size(159, 18)
-        Me.TextBox26.TabIndex = 26
+        Me.TextBoxPIDesignation.BackColor = System.Drawing.SystemColors.Control
+        Me.TextBoxPIDesignation.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBoxPIDesignation.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.TextBoxPIDesignation.Location = New System.Drawing.Point(113, 33)
+        Me.TextBoxPIDesignation.Name = "TextBoxPIDesignation"
+        Me.TextBoxPIDesignation.ReadOnly = True
+        Me.TextBoxPIDesignation.Size = New System.Drawing.Size(159, 16)
+        Me.TextBoxPIDesignation.TabIndex = 26
         '
         'Panel8
         '
@@ -721,22 +769,22 @@ Partial Class frmEmployee
         Me.Panel8.Controls.Add(Me.Label28)
         Me.Panel8.Controls.Add(Me.Label29)
         Me.Panel8.Controls.Add(Me.Label30)
-        Me.Panel8.Controls.Add(Me.MaskedTextBox1)
-        Me.Panel8.Controls.Add(Me.MaskedTextBox2)
-        Me.Panel8.Controls.Add(Me.MaskedTextBox4)
-        Me.Panel8.Controls.Add(Me.MaskedTextBox3)
+        Me.Panel8.Controls.Add(Me.MaskedTextBoxPIPHIL)
+        Me.Panel8.Controls.Add(Me.MaskedTextBoxPITIN)
+        Me.Panel8.Controls.Add(Me.MaskedTextBoxPISSS)
+        Me.Panel8.Controls.Add(Me.MaskedTextBoxPIPagIbig)
         Me.Panel8.Controls.Add(Me.Panel9)
         Me.Panel8.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel8.Location = New System.Drawing.Point(3, 105)
+        Me.Panel8.Location = New System.Drawing.Point(3, 99)
         Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(766, 96)
+        Me.Panel8.Size = New System.Drawing.Size(766, 90)
         Me.Panel8.TabIndex = 1
         '
         'Label27
         '
         Me.Label27.AutoSize = True
         Me.Label27.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Label27.Location = New System.Drawing.Point(5, 29)
+        Me.Label27.Location = New System.Drawing.Point(5, 33)
         Me.Label27.Name = "Label27"
         Me.Label27.Size = New System.Drawing.Size(130, 15)
         Me.Label27.TabIndex = 17
@@ -746,7 +794,7 @@ Partial Class frmEmployee
         '
         Me.Label28.AutoSize = True
         Me.Label28.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Label28.Location = New System.Drawing.Point(385, 28)
+        Me.Label28.Location = New System.Drawing.Point(385, 32)
         Me.Label28.Name = "Label28"
         Me.Label28.Size = New System.Drawing.Size(144, 15)
         Me.Label28.TabIndex = 18
@@ -756,7 +804,7 @@ Partial Class frmEmployee
         '
         Me.Label29.AutoSize = True
         Me.Label29.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Label29.Location = New System.Drawing.Point(5, 51)
+        Me.Label29.Location = New System.Drawing.Point(6, 61)
         Me.Label29.Name = "Label29"
         Me.Label29.Size = New System.Drawing.Size(102, 15)
         Me.Label29.TabIndex = 19
@@ -766,67 +814,71 @@ Partial Class frmEmployee
         '
         Me.Label30.AutoSize = True
         Me.Label30.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Label30.Location = New System.Drawing.Point(385, 51)
+        Me.Label30.Location = New System.Drawing.Point(385, 60)
         Me.Label30.Name = "Label30"
         Me.Label30.Size = New System.Drawing.Size(127, 15)
         Me.Label30.TabIndex = 20
         Me.Label30.Text = "PHIL-HEALTH Number"
         '
-        'MaskedTextBox1
+        'MaskedTextBoxPIPHIL
         '
-        Me.MaskedTextBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.MaskedTextBoxPIPHIL.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.MaskedTextBox1.BackColor = System.Drawing.SystemColors.Control
-        Me.MaskedTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.MaskedTextBox1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.MaskedTextBox1.ForeColor = System.Drawing.SystemColors.WindowFrame
-        Me.MaskedTextBox1.Location = New System.Drawing.Point(547, 50)
-        Me.MaskedTextBox1.Mask = "0000-0000-0000-0000"
-        Me.MaskedTextBox1.Name = "MaskedTextBox1"
-        Me.MaskedTextBox1.Size = New System.Drawing.Size(200, 16)
-        Me.MaskedTextBox1.TabIndex = 24
-        Me.MaskedTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.MaskedTextBoxPIPHIL.BackColor = System.Drawing.SystemColors.Control
+        Me.MaskedTextBoxPIPHIL.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.MaskedTextBoxPIPHIL.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.MaskedTextBoxPIPHIL.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.MaskedTextBoxPIPHIL.Location = New System.Drawing.Point(547, 59)
+        Me.MaskedTextBoxPIPHIL.Mask = "0000-0000-0000-0000"
+        Me.MaskedTextBoxPIPHIL.Name = "MaskedTextBoxPIPHIL"
+        Me.MaskedTextBoxPIPHIL.ReadOnly = True
+        Me.MaskedTextBoxPIPHIL.Size = New System.Drawing.Size(200, 16)
+        Me.MaskedTextBoxPIPHIL.TabIndex = 24
+        Me.MaskedTextBoxPIPHIL.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'MaskedTextBox2
+        'MaskedTextBoxPITIN
         '
-        Me.MaskedTextBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.MaskedTextBoxPITIN.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.MaskedTextBox2.BackColor = System.Drawing.SystemColors.Control
-        Me.MaskedTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.MaskedTextBox2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.MaskedTextBox2.ForeColor = System.Drawing.SystemColors.WindowFrame
-        Me.MaskedTextBox2.Location = New System.Drawing.Point(547, 28)
-        Me.MaskedTextBox2.Mask = "0000-0000-0000-0000"
-        Me.MaskedTextBox2.Name = "MaskedTextBox2"
-        Me.MaskedTextBox2.Size = New System.Drawing.Size(200, 16)
-        Me.MaskedTextBox2.TabIndex = 22
-        Me.MaskedTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.MaskedTextBoxPITIN.BackColor = System.Drawing.SystemColors.Control
+        Me.MaskedTextBoxPITIN.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.MaskedTextBoxPITIN.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.MaskedTextBoxPITIN.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.MaskedTextBoxPITIN.Location = New System.Drawing.Point(547, 32)
+        Me.MaskedTextBoxPITIN.Mask = "0000-0000-0000-0000"
+        Me.MaskedTextBoxPITIN.Name = "MaskedTextBoxPITIN"
+        Me.MaskedTextBoxPITIN.ReadOnly = True
+        Me.MaskedTextBoxPITIN.Size = New System.Drawing.Size(200, 16)
+        Me.MaskedTextBoxPITIN.TabIndex = 22
+        Me.MaskedTextBoxPITIN.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'MaskedTextBox4
+        'MaskedTextBoxPISSS
         '
-        Me.MaskedTextBox4.BackColor = System.Drawing.SystemColors.Control
-        Me.MaskedTextBox4.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.MaskedTextBox4.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.MaskedTextBox4.ForeColor = System.Drawing.SystemColors.WindowFrame
-        Me.MaskedTextBox4.Location = New System.Drawing.Point(166, 28)
-        Me.MaskedTextBox4.Mask = "0000-0000-0000-0000"
-        Me.MaskedTextBox4.Name = "MaskedTextBox4"
-        Me.MaskedTextBox4.Size = New System.Drawing.Size(176, 16)
-        Me.MaskedTextBox4.TabIndex = 21
-        Me.MaskedTextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.MaskedTextBoxPISSS.BackColor = System.Drawing.SystemColors.Control
+        Me.MaskedTextBoxPISSS.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.MaskedTextBoxPISSS.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.MaskedTextBoxPISSS.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.MaskedTextBoxPISSS.Location = New System.Drawing.Point(166, 32)
+        Me.MaskedTextBoxPISSS.Mask = "0000-0000-0000-0000"
+        Me.MaskedTextBoxPISSS.Name = "MaskedTextBoxPISSS"
+        Me.MaskedTextBoxPISSS.ReadOnly = True
+        Me.MaskedTextBoxPISSS.Size = New System.Drawing.Size(176, 16)
+        Me.MaskedTextBoxPISSS.TabIndex = 21
+        Me.MaskedTextBoxPISSS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'MaskedTextBox3
+        'MaskedTextBoxPIPagIbig
         '
-        Me.MaskedTextBox3.BackColor = System.Drawing.SystemColors.Control
-        Me.MaskedTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.MaskedTextBox3.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.MaskedTextBox3.ForeColor = System.Drawing.SystemColors.WindowFrame
-        Me.MaskedTextBox3.Location = New System.Drawing.Point(166, 50)
-        Me.MaskedTextBox3.Mask = "0000-0000-0000-0000"
-        Me.MaskedTextBox3.Name = "MaskedTextBox3"
-        Me.MaskedTextBox3.Size = New System.Drawing.Size(176, 16)
-        Me.MaskedTextBox3.TabIndex = 23
-        Me.MaskedTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.MaskedTextBoxPIPagIbig.BackColor = System.Drawing.SystemColors.Control
+        Me.MaskedTextBoxPIPagIbig.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.MaskedTextBoxPIPagIbig.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.MaskedTextBoxPIPagIbig.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.MaskedTextBoxPIPagIbig.Location = New System.Drawing.Point(167, 60)
+        Me.MaskedTextBoxPIPagIbig.Mask = "0000-0000-0000-0000"
+        Me.MaskedTextBoxPIPagIbig.Name = "MaskedTextBoxPIPagIbig"
+        Me.MaskedTextBoxPIPagIbig.ReadOnly = True
+        Me.MaskedTextBoxPIPagIbig.Size = New System.Drawing.Size(176, 16)
+        Me.MaskedTextBoxPIPagIbig.TabIndex = 23
+        Me.MaskedTextBoxPIPagIbig.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Panel9
         '
@@ -868,67 +920,69 @@ Partial Class frmEmployee
         '
         'Panel5
         '
-        Me.Panel5.Controls.Add(Me.TextBox6)
-        Me.Panel5.Controls.Add(Me.TextBox5)
-        Me.Panel5.Controls.Add(Me.DateTimePicker1)
+        Me.Panel5.Controls.Add(Me.TextBoxPIAddress1)
+        Me.Panel5.Controls.Add(Me.TextBoxPIAddress2)
+        Me.Panel5.Controls.Add(Me.DateTimePickerPIBDate)
         Me.Panel5.Controls.Add(Me.Label17)
         Me.Panel5.Controls.Add(Me.Label9)
-        Me.Panel5.Controls.Add(Me.TextBox3)
+        Me.Panel5.Controls.Add(Me.TextBoxPIFirst)
         Me.Panel5.Controls.Add(Me.Label11)
         Me.Panel5.Controls.Add(Me.Label7)
-        Me.Panel5.Controls.Add(Me.TextBox4)
-        Me.Panel5.Controls.Add(Me.TextBox2)
+        Me.Panel5.Controls.Add(Me.TextBoxPIMid)
+        Me.Panel5.Controls.Add(Me.TextBoxPIAge)
         Me.Panel5.Controls.Add(Me.Label15)
         Me.Panel5.Controls.Add(Me.Label13)
         Me.Panel5.Controls.Add(Me.Label14)
         Me.Panel5.Controls.Add(Me.Label12)
         Me.Panel5.Controls.Add(Me.Label10)
         Me.Panel5.Controls.Add(Me.Label5)
-        Me.Panel5.Controls.Add(Me.TextBox7)
-        Me.Panel5.Controls.Add(Me.TextBox1)
+        Me.Panel5.Controls.Add(Me.TextBoxPILastName)
+        Me.Panel5.Controls.Add(Me.TextBoxPIContact)
         Me.Panel5.Controls.Add(Me.Panel3)
+        Me.Panel5.Controls.Add(Me.TextBoxPIImage)
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel5.Location = New System.Drawing.Point(153, 3)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(616, 187)
         Me.Panel5.TabIndex = 1
         '
-        'TextBox6
+        'TextBoxPIAddress1
         '
-        Me.TextBox6.BackColor = System.Drawing.SystemColors.Control
-        Me.TextBox6.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox6.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.TextBox6.Location = New System.Drawing.Point(100, 86)
-        Me.TextBox6.Multiline = True
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.ReadOnly = True
-        Me.TextBox6.Size = New System.Drawing.Size(155, 89)
-        Me.TextBox6.TabIndex = 24
+        Me.TextBoxPIAddress1.BackColor = System.Drawing.SystemColors.Control
+        Me.TextBoxPIAddress1.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBoxPIAddress1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.TextBoxPIAddress1.Location = New System.Drawing.Point(82, 86)
+        Me.TextBoxPIAddress1.Multiline = True
+        Me.TextBoxPIAddress1.Name = "TextBoxPIAddress1"
+        Me.TextBoxPIAddress1.ReadOnly = True
+        Me.TextBoxPIAddress1.Size = New System.Drawing.Size(156, 89)
+        Me.TextBoxPIAddress1.TabIndex = 24
         '
-        'TextBox5
+        'TextBoxPIAddress2
         '
-        Me.TextBox5.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.TextBoxPIAddress2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox5.BackColor = System.Drawing.SystemColors.Control
-        Me.TextBox5.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox5.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.TextBox5.Location = New System.Drawing.Point(399, 90)
-        Me.TextBox5.Multiline = True
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.ReadOnly = True
-        Me.TextBox5.Size = New System.Drawing.Size(198, 89)
-        Me.TextBox5.TabIndex = 25
+        Me.TextBoxPIAddress2.BackColor = System.Drawing.SystemColors.Control
+        Me.TextBoxPIAddress2.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBoxPIAddress2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.TextBoxPIAddress2.Location = New System.Drawing.Point(399, 90)
+        Me.TextBoxPIAddress2.Multiline = True
+        Me.TextBoxPIAddress2.Name = "TextBoxPIAddress2"
+        Me.TextBoxPIAddress2.ReadOnly = True
+        Me.TextBoxPIAddress2.Size = New System.Drawing.Size(198, 89)
+        Me.TextBoxPIAddress2.TabIndex = 25
         '
-        'DateTimePicker1
+        'DateTimePickerPIBDate
         '
-        Me.DateTimePicker1.CalendarMonthBackground = System.Drawing.SystemColors.Control
-        Me.DateTimePicker1.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right
-        Me.DateTimePicker1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker1.Location = New System.Drawing.Point(82, 57)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(156, 23)
-        Me.DateTimePicker1.TabIndex = 22
+        Me.DateTimePickerPIBDate.CalendarMonthBackground = System.Drawing.SystemColors.Control
+        Me.DateTimePickerPIBDate.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right
+        Me.DateTimePickerPIBDate.Enabled = False
+        Me.DateTimePickerPIBDate.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.DateTimePickerPIBDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DateTimePickerPIBDate.Location = New System.Drawing.Point(82, 57)
+        Me.DateTimePickerPIBDate.Name = "DateTimePickerPIBDate"
+        Me.DateTimePickerPIBDate.Size = New System.Drawing.Size(156, 23)
+        Me.DateTimePickerPIBDate.TabIndex = 22
         '
         'Label17
         '
@@ -950,15 +1004,16 @@ Partial Class frmEmployee
         Me.Label9.TabIndex = 13
         Me.Label9.Text = "Last Name"
         '
-        'TextBox3
+        'TextBoxPIFirst
         '
-        Me.TextBox3.BackColor = System.Drawing.SystemColors.Control
-        Me.TextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox3.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.TextBox3.Location = New System.Drawing.Point(82, 28)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(156, 16)
-        Me.TextBox3.TabIndex = 8
+        Me.TextBoxPIFirst.BackColor = System.Drawing.SystemColors.Control
+        Me.TextBoxPIFirst.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBoxPIFirst.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.TextBoxPIFirst.Location = New System.Drawing.Point(82, 28)
+        Me.TextBoxPIFirst.Name = "TextBoxPIFirst"
+        Me.TextBoxPIFirst.ReadOnly = True
+        Me.TextBoxPIFirst.Size = New System.Drawing.Size(156, 16)
+        Me.TextBoxPIFirst.TabIndex = 8
         '
         'Label11
         '
@@ -980,26 +1035,27 @@ Partial Class frmEmployee
         Me.Label7.TabIndex = 15
         Me.Label7.Text = "M.I"
         '
-        'TextBox4
+        'TextBoxPIMid
         '
-        Me.TextBox4.BackColor = System.Drawing.SystemColors.Control
-        Me.TextBox4.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox4.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.TextBox4.Location = New System.Drawing.Point(276, 28)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(48, 16)
-        Me.TextBox4.TabIndex = 9
+        Me.TextBoxPIMid.BackColor = System.Drawing.SystemColors.Control
+        Me.TextBoxPIMid.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBoxPIMid.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.TextBoxPIMid.Location = New System.Drawing.Point(276, 28)
+        Me.TextBoxPIMid.Name = "TextBoxPIMid"
+        Me.TextBoxPIMid.ReadOnly = True
+        Me.TextBoxPIMid.Size = New System.Drawing.Size(48, 16)
+        Me.TextBoxPIMid.TabIndex = 9
         '
-        'TextBox2
+        'TextBoxPIAge
         '
-        Me.TextBox2.BackColor = System.Drawing.SystemColors.Control
-        Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox2.Enabled = False
-        Me.TextBox2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.TextBox2.Location = New System.Drawing.Point(276, 60)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(48, 16)
-        Me.TextBox2.TabIndex = 10
+        Me.TextBoxPIAge.BackColor = System.Drawing.SystemColors.Control
+        Me.TextBoxPIAge.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBoxPIAge.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.TextBoxPIAge.Location = New System.Drawing.Point(276, 60)
+        Me.TextBoxPIAge.Name = "TextBoxPIAge"
+        Me.TextBoxPIAge.ReadOnly = True
+        Me.TextBoxPIAge.Size = New System.Drawing.Size(48, 16)
+        Me.TextBoxPIAge.TabIndex = 10
         '
         'Label15
         '
@@ -1061,29 +1117,31 @@ Partial Class frmEmployee
         Me.Label5.TabIndex = 11
         Me.Label5.Text = "First Name"
         '
-        'TextBox7
+        'TextBoxPILastName
         '
-        Me.TextBox7.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.TextBoxPILastName.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox7.BackColor = System.Drawing.SystemColors.Control
-        Me.TextBox7.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox7.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.TextBox7.Location = New System.Drawing.Point(400, 28)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(197, 16)
-        Me.TextBox7.TabIndex = 16
+        Me.TextBoxPILastName.BackColor = System.Drawing.SystemColors.Control
+        Me.TextBoxPILastName.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBoxPILastName.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.TextBoxPILastName.Location = New System.Drawing.Point(400, 28)
+        Me.TextBoxPILastName.Name = "TextBoxPILastName"
+        Me.TextBoxPILastName.ReadOnly = True
+        Me.TextBoxPILastName.Size = New System.Drawing.Size(197, 16)
+        Me.TextBoxPILastName.TabIndex = 16
         '
-        'TextBox1
+        'TextBoxPIContact
         '
-        Me.TextBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.TextBoxPIContact.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox1.BackColor = System.Drawing.SystemColors.Control
-        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.TextBox1.Location = New System.Drawing.Point(400, 59)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(197, 16)
-        Me.TextBox1.TabIndex = 23
+        Me.TextBoxPIContact.BackColor = System.Drawing.SystemColors.Control
+        Me.TextBoxPIContact.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBoxPIContact.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.TextBoxPIContact.Location = New System.Drawing.Point(400, 59)
+        Me.TextBoxPIContact.Name = "TextBoxPIContact"
+        Me.TextBoxPIContact.ReadOnly = True
+        Me.TextBoxPIContact.Size = New System.Drawing.Size(197, 16)
+        Me.TextBoxPIContact.TabIndex = 23
         '
         'Panel3
         '
@@ -1108,38 +1166,43 @@ Partial Class frmEmployee
         Me.Label6.TabIndex = 1
         Me.Label6.Text = "BASIC INFORMATION"
         '
+        'TextBoxPIImage
+        '
+        Me.TextBoxPIImage.Location = New System.Drawing.Point(108, 128)
+        Me.TextBoxPIImage.Name = "TextBoxPIImage"
+        Me.TextBoxPIImage.Size = New System.Drawing.Size(100, 22)
+        Me.TextBoxPIImage.TabIndex = 26
+        '
         'Panel4
         '
-        Me.Panel4.Controls.Add(Me.ComboBox1)
-        Me.Panel4.Controls.Add(Me.PictureBox1)
+        Me.Panel4.Controls.Add(Me.Button1)
+        Me.Panel4.Controls.Add(Me.PictureBoxPIImage)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel4.Location = New System.Drawing.Point(3, 3)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(144, 187)
         Me.Panel4.TabIndex = 0
         '
-        'ComboBox1
+        'PictureBoxPIImage
         '
-        Me.ComboBox1.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ComboBox1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.ComboBox1.ForeColor = System.Drawing.Color.Black
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"Active", "Resigned", "Suspended", "Terminated"})
-        Me.ComboBox1.Location = New System.Drawing.Point(3, 156)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(138, 23)
-        Me.ComboBox1.TabIndex = 2
+        Me.PictureBoxPIImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.PictureBoxPIImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PictureBoxPIImage.Location = New System.Drawing.Point(3, 4)
+        Me.PictureBoxPIImage.Name = "PictureBoxPIImage"
+        Me.PictureBoxPIImage.Size = New System.Drawing.Size(138, 150)
+        Me.PictureBoxPIImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBoxPIImage.TabIndex = 27
+        Me.PictureBoxPIImage.TabStop = False
         '
-        'PictureBox1
+        'Button1
         '
-        Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox1.Location = New System.Drawing.Point(3, 3)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(138, 147)
-        Me.PictureBox1.TabIndex = 1
-        Me.PictureBox1.TabStop = False
+        Me.Button1.Enabled = False
+        Me.Button1.Location = New System.Drawing.Point(3, 156)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(138, 23)
+        Me.Button1.TabIndex = 2
+        Me.Button1.Text = "BROWSE"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'TabPage2
         '
@@ -1213,11 +1276,18 @@ Partial Class frmEmployee
         Me.ToolStripButton5.Image = CType(resources.GetObject("ToolStripButton5.Image"), System.Drawing.Image)
         Me.ToolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripButton5.Name = "ToolStripButton5"
-        Me.ToolStripButton5.Size = New System.Drawing.Size(62, 22)
-        Me.ToolStripButton5.Text = "Summary"
+        Me.ToolStripButton5.Size = New System.Drawing.Size(49, 22)
+        Me.ToolStripButton5.Text = "Update"
         '
         'BackgroundWorkerpersonalinfo
         '
+        '
+        'BackgroundWorkerPISave
+        '
+        '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
         'frmEmployee
         '
@@ -1268,7 +1338,7 @@ Partial Class frmEmployee
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         Me.Panel4.ResumeLayout(False)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBoxPIImage, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip2.ResumeLayout(False)
         Me.ToolStrip2.PerformLayout()
         Me.ResumeLayout(False)
@@ -1300,27 +1370,26 @@ Partial Class frmEmployee
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents TabPage3 As TabPage
     Friend WithEvents TabPage4 As TabPage
-    Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
     Friend WithEvents Panel5 As Panel
-    Friend WithEvents TextBox6 As TextBox
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents TextBoxPIAddress1 As TextBox
+    Friend WithEvents TextBoxPIAddress2 As TextBox
+    Friend WithEvents DateTimePickerPIBDate As DateTimePicker
     Friend WithEvents Label17 As Label
     Friend WithEvents Label9 As Label
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents TextBoxPIFirst As TextBox
     Friend WithEvents Label11 As Label
     Friend WithEvents Label7 As Label
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents TextBoxPIMid As TextBox
+    Friend WithEvents TextBoxPIAge As TextBox
     Friend WithEvents Label15 As Label
     Friend WithEvents Label13 As Label
     Friend WithEvents Label14 As Label
     Friend WithEvents Label12 As Label
     Friend WithEvents Label10 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents TextBox7 As TextBox
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TextBoxPILastName As TextBox
+    Friend WithEvents TextBoxPIContact As TextBox
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Label6 As Label
     Friend WithEvents Panel4 As Panel
@@ -1329,39 +1398,38 @@ Partial Class frmEmployee
     Friend WithEvents Panel6 As Panel
     Friend WithEvents Panel7 As Panel
     Friend WithEvents Label2 As Label
-    Friend WithEvents ComboBox2 As ComboBox
     Friend WithEvents Label44 As Label
-    Friend WithEvents ComboBox3 As ComboBox
+    Friend WithEvents ComboBoxPIGroup As ComboBox
     Friend WithEvents Label70 As Label
-    Friend WithEvents DateTimePicker3 As DateTimePicker
+    Friend WithEvents DateTimePickerPIDateHired As DateTimePicker
     Friend WithEvents Label71 As Label
     Friend WithEvents Label47 As Label
-    Friend WithEvents TextBox25 As TextBox
-    Friend WithEvents DateTimePicker2 As DateTimePicker
+    Friend WithEvents TextBoxPISalary As TextBox
+    Friend WithEvents DateTimePickerPIAppraisal As DateTimePicker
     Friend WithEvents Label45 As Label
     Friend WithEvents Label46 As Label
-    Friend WithEvents TextBox26 As TextBox
+    Friend WithEvents TextBoxPIDesignation As TextBox
     Friend WithEvents Panel8 As Panel
     Friend WithEvents Label27 As Label
     Friend WithEvents Label28 As Label
     Friend WithEvents Label29 As Label
     Friend WithEvents Label30 As Label
-    Friend WithEvents MaskedTextBox1 As MaskedTextBox
-    Friend WithEvents MaskedTextBox2 As MaskedTextBox
-    Friend WithEvents MaskedTextBox4 As MaskedTextBox
-    Friend WithEvents MaskedTextBox3 As MaskedTextBox
+    Friend WithEvents MaskedTextBoxPIPHIL As MaskedTextBox
+    Friend WithEvents MaskedTextBoxPITIN As MaskedTextBox
+    Friend WithEvents MaskedTextBoxPISSS As MaskedTextBox
+    Friend WithEvents MaskedTextBoxPIPagIbig As MaskedTextBox
     Friend WithEvents Panel9 As Panel
     Friend WithEvents Label3 As Label
     Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
     Friend WithEvents Panel10 As Panel
-    Friend WithEvents TextBox13 As TextBox
-    Friend WithEvents TextBox11 As TextBox
-    Friend WithEvents TextBox9 As TextBox
-    Friend WithEvents TextBox12 As TextBox
-    Friend WithEvents TextBox15 As TextBox
-    Friend WithEvents TextBox14 As TextBox
-    Friend WithEvents TextBox10 As TextBox
-    Friend WithEvents TextBox8 As TextBox
+    Friend WithEvents TextBoxPIMothersName As TextBox
+    Friend WithEvents TextBoxPIMothersOccupation As TextBox
+    Friend WithEvents TextBoxPIFathersName As TextBox
+    Friend WithEvents TextBoxPIFathersOccupation As TextBox
+    Friend WithEvents TextBoxPISpouse As TextBox
+    Friend WithEvents TextBoxPISpouseOccupation As TextBox
+    Friend WithEvents TextBoxPiEmergency As TextBox
+    Friend WithEvents TextBoxPIEmergencyContact As TextBox
     Friend WithEvents Label25 As Label
     Friend WithEvents Label23 As Label
     Friend WithEvents Label21 As Label
@@ -1373,4 +1441,13 @@ Partial Class frmEmployee
     Friend WithEvents Panel11 As Panel
     Friend WithEvents Label4 As Label
     Friend WithEvents BackgroundWorkerpersonalinfo As System.ComponentModel.BackgroundWorker
+    Friend WithEvents BackgroundWorkerPISave As System.ComponentModel.BackgroundWorker
+    Friend WithEvents Button1 As Button
+    Friend WithEvents OpenFileDialog1 As OpenFileDialog
+    Friend WithEvents TextBoxPIImage As TextBox
+    Friend WithEvents PictureBoxPIImage As PictureBox
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
 End Class
