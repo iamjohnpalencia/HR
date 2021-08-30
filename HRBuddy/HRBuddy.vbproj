@@ -85,6 +85,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChildsSubForms\frmEmployees.Designer.vb">
+      <DependentUpon>frmEmployees.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ChildsSubForms\frmEmployees.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ChildsSubForms\frmSubBranch.Designer.vb">
       <DependentUpon>frmSubBranch.vb</DependentUpon>
     </Compile>
@@ -205,6 +211,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ChildsSubForms\frmEmployees.resx">
+      <DependentUpon>frmEmployees.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChildsSubForms\frmSubBranch.resx">
       <DependentUpon>frmSubBranch.vb</DependentUpon>
     </EmbeddedResource>

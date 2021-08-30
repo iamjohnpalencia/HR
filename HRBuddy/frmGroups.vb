@@ -14,6 +14,7 @@ Public Class frmGroups
 
     Private Sub frmGroups_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
+            CloseSpecificForm = False
             WindowState = FormWindowState.Maximized
             StartPosition = FormStartPosition.CenterScreen
             CheckForIllegalCrossThreadCalls = False
@@ -25,15 +26,15 @@ Public Class frmGroups
                 BackgroundWorkerCompany.RunWorkerAsync()
 
                 BackgroundWorkerBranch.WorkerReportsProgress = True
-                BackgroundWorkerBranch.WorkerReportsProgress = True
+                BackgroundWorkerBranch.WorkerSupportsCancellation = True
                 BackgroundWorkerBranch.RunWorkerAsync()
 
                 BackgroundWorkerDept.WorkerReportsProgress = True
-                BackgroundWorkerDept.WorkerReportsProgress = True
+                BackgroundWorkerDept.WorkerSupportsCancellation = True
                 BackgroundWorkerDept.RunWorkerAsync()
 
                 BackgroundWorkerTeam.WorkerReportsProgress = True
-                BackgroundWorkerTeam.WorkerReportsProgress = True
+                BackgroundWorkerTeam.WorkerSupportsCancellation = True
                 BackgroundWorkerTeam.RunWorkerAsync()
 
                 TabControl1.Enabled = False
@@ -295,7 +296,7 @@ Public Class frmGroups
                 End If
                 If i = 0 Then
                     ToolStripStatusLabel1.Text = "Loading. Please wait."
-                    ThreadCompany = New Thread(Sub() GetCompany())
+                    ThreadCompany = New Thread(Sub() CompanyDatatable = GetCompany(0))
                     ThreadCompany.Start()
                     threadListCompany.Add(ThreadCompany)
                 End If
@@ -324,7 +325,7 @@ Public Class frmGroups
                 End If
                 If i = 0 Then
                     ToolStripStatusLabel1.Text = "Loading. Please wait."
-                    ThreadBranch = New Thread(Sub() GetBranch())
+                    ThreadBranch = New Thread(Sub() BranchDatatable = GetBranch(0))
                     ThreadBranch.Start()
                     threadListBranch.Add(ThreadBranch)
                 End If
@@ -353,7 +354,7 @@ Public Class frmGroups
                 End If
                 If i = 0 Then
                     ToolStripStatusLabel1.Text = "Loading. Please wait."
-                    ThreadDept = New Thread(Sub() GetDept())
+                    ThreadDept = New Thread(Sub() DeptDatatable = GetDept(0))
                     ThreadDept.Start()
                     threadListDept.Add(ThreadDept)
                 End If
@@ -382,7 +383,7 @@ Public Class frmGroups
                 End If
                 If i = 0 Then
                     ToolStripStatusLabel1.Text = "Loading. Please wait."
-                    ThreadTeam = New Thread(Sub() GetTeam())
+                    ThreadTeam = New Thread(Sub() TeamDatatable = GetTeam(0))
                     ThreadTeam.Start()
                     threadListTeam.Add(ThreadTeam)
                 End If
@@ -531,61 +532,7 @@ Public Class frmGroups
         End Try
     End Sub
 
-    Private Sub GetCompany()
-        Try
-            Dim ConnectionServer As MySqlConnection = ServerCloudCon()
-            Dim sql = "SELECT * FROM tblcompany LIMIT 50"
-            Dim cmd As MySqlCommand = New MySqlCommand(sql, ConnectionServer)
-            Dim da As MySqlDataAdapter = New MySqlDataAdapter(cmd)
-            CompanyDatatable = New DataTable
-            da.Fill(CompanyDatatable)
 
-        Catch ex As Exception
-            MsgBox(ex.ToString)
-        End Try
-    End Sub
-
-    Private Sub GetBranch()
-        Try
-            Dim ConnectionServer As MySqlConnection = ServerCloudCon()
-            Dim sql = "SELECT * FROM tblbranch LIMIT 50"
-            Dim cmd As MySqlCommand = New MySqlCommand(sql, ConnectionServer)
-            Dim da As MySqlDataAdapter = New MySqlDataAdapter(cmd)
-            BranchDatatable = New DataTable
-            da.Fill(BranchDatatable)
-
-        Catch ex As Exception
-            MsgBox(ex.ToString)
-        End Try
-    End Sub
-
-    Private Sub GetDept()
-        Try
-            Dim ConnectionServer As MySqlConnection = ServerCloudCon()
-            Dim sql = "SELECT * FROM tbldepartment LIMIT 50"
-            Dim cmd As MySqlCommand = New MySqlCommand(sql, ConnectionServer)
-            Dim da As MySqlDataAdapter = New MySqlDataAdapter(cmd)
-            DeptDatatable = New DataTable
-            da.Fill(DeptDatatable)
-
-        Catch ex As Exception
-            MsgBox(ex.ToString)
-        End Try
-    End Sub
-
-    Private Sub GetTeam()
-        Try
-            Dim ConnectionServer As MySqlConnection = ServerCloudCon()
-            Dim sql = "SELECT * FROM tblteam LIMIT 50"
-            Dim cmd As MySqlCommand = New MySqlCommand(sql, ConnectionServer)
-            Dim da As MySqlDataAdapter = New MySqlDataAdapter(cmd)
-            TeamDatatable = New DataTable
-            da.Fill(TeamDatatable)
-
-        Catch ex As Exception
-            MsgBox(ex.ToString)
-        End Try
-    End Sub
 
     Private Sub ToolStripButton14_Click(sender As Object, e As EventArgs) Handles ToolStripButton14.Click
         Try
@@ -654,8 +601,9 @@ Public Class frmGroups
     Private Sub frmGroups_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Try
             If BackgroundWorkerCompany.IsBusy Or BackgroundWorkerBranch.IsBusy Or BackgroundWorkerDept.IsBusy Or BackgroundWorkerTeam.IsBusy Then
-                Dim msg = MessageBox.Show("Are you sure do you want to cancel sync ?", "Cancel Sync", MessageBoxButtons.YesNo, MessageBoxIcon.Information)
-                If msg = DialogResult.Yes Then
+                If MessageBox.Show("Are you sure do you want to cancel sync ?", "Cancel Sync", MessageBoxButtons.YesNo) = DialogResult.No Then
+                    e.Cancel = True
+                Else
                     If BackgroundWorkerCompany.IsBusy Then
                         BackgroundWorkerCompany.CancelAsync()
                     End If
@@ -669,12 +617,11 @@ Public Class frmGroups
                         BackgroundWorkerTeam.CancelAsync()
                     End If
                     WorkerCancel = True
+                    CloseSpecificForm = True
                 End If
             End If
         Catch ex As Exception
             MsgBox(ex.ToString)
         End Try
     End Sub
-
-
 End Class

@@ -23,14 +23,17 @@
     Public CheckBranchNameExist As Boolean = False
     Public CheckDepartmentExist As Boolean = False
     Public CheckTeamnameExist As Boolean = False
-
     'Update groups variables
     Public UPDATECOMPANYDETAILS As Boolean = False
     Public UPDATEBRANCHDETAILS As Boolean = False
     Public UPDATEDEPARTMENTDETAILS As Boolean = False
     Public UPDATETEAMNAMEDETAILS As Boolean = False
-
     'GetEmpCode
     Public PIEMPLOYEECODE As Integer = 0
+    'Form Employee Arrays
+    Public EmployeeBasicInfoArray() As String
+    Public EmployeeEmploymentDetailsArray() As String
 
+    '
+    Public CloseSpecificForm As Boolean = True
 End Module

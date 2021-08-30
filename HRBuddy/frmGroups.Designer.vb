@@ -97,7 +97,6 @@ Partial Class frmGroups
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.HelpToolStripButton = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
@@ -131,7 +130,7 @@ Partial Class frmGroups
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(1028, 354)
+        Me.TabPage1.Size = New System.Drawing.Size(1020, 346)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Company"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -152,7 +151,7 @@ Partial Class frmGroups
         Me.DataGridViewCompany.Name = "DataGridViewCompany"
         Me.DataGridViewCompany.RowHeadersVisible = False
         Me.DataGridViewCompany.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridViewCompany.Size = New System.Drawing.Size(1022, 323)
+        Me.DataGridViewCompany.Size = New System.Drawing.Size(1014, 315)
         Me.DataGridViewCompany.TabIndex = 46
         '
         'Column1
@@ -210,7 +209,7 @@ Partial Class frmGroups
         Me.ToolStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton1, Me.ToolStripButton4, Me.ToolStripButton5, Me.ToolStripButton14})
         Me.ToolStrip2.Location = New System.Drawing.Point(3, 3)
         Me.ToolStrip2.Name = "ToolStrip2"
-        Me.ToolStrip2.Size = New System.Drawing.Size(1022, 25)
+        Me.ToolStrip2.Size = New System.Drawing.Size(1014, 25)
         Me.ToolStrip2.TabIndex = 45
         Me.ToolStrip2.Text = "ToolStrip2"
         '
@@ -260,7 +259,7 @@ Partial Class frmGroups
         Me.TabControl1.Location = New System.Drawing.Point(0, 25)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(1036, 380)
+        Me.TabControl1.Size = New System.Drawing.Size(1028, 372)
         Me.TabControl1.TabIndex = 7
         '
         'TabPage5
@@ -269,7 +268,7 @@ Partial Class frmGroups
         Me.TabPage5.Location = New System.Drawing.Point(4, 22)
         Me.TabPage5.Name = "TabPage5"
         Me.TabPage5.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage5.Size = New System.Drawing.Size(1028, 354)
+        Me.TabPage5.Size = New System.Drawing.Size(1024, 350)
         Me.TabPage5.TabIndex = 4
         Me.TabPage5.Text = "Branch"
         Me.TabPage5.UseVisualStyleBackColor = True
@@ -281,7 +280,7 @@ Partial Class frmGroups
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel6.Location = New System.Drawing.Point(3, 3)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(1022, 348)
+        Me.Panel6.Size = New System.Drawing.Size(1018, 344)
         Me.Panel6.TabIndex = 49
         '
         'DataGridViewBranch
@@ -300,7 +299,7 @@ Partial Class frmGroups
         Me.DataGridViewBranch.Name = "DataGridViewBranch"
         Me.DataGridViewBranch.RowHeadersVisible = False
         Me.DataGridViewBranch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridViewBranch.Size = New System.Drawing.Size(1022, 323)
+        Me.DataGridViewBranch.Size = New System.Drawing.Size(1018, 319)
         Me.DataGridViewBranch.TabIndex = 47
         '
         'DataGridViewTextBoxColumn1
@@ -358,7 +357,7 @@ Partial Class frmGroups
         Me.ToolStrip3.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton3, Me.ToolStripButton6, Me.ToolStripButton7, Me.ToolStripButton15})
         Me.ToolStrip3.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip3.Name = "ToolStrip3"
-        Me.ToolStrip3.Size = New System.Drawing.Size(1022, 25)
+        Me.ToolStrip3.Size = New System.Drawing.Size(1018, 25)
         Me.ToolStrip3.TabIndex = 46
         Me.ToolStrip3.Text = "ToolStrip3"
         '
@@ -405,7 +404,7 @@ Partial Class frmGroups
         Me.TabPage6.Location = New System.Drawing.Point(4, 22)
         Me.TabPage6.Name = "TabPage6"
         Me.TabPage6.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage6.Size = New System.Drawing.Size(1032, 358)
+        Me.TabPage6.Size = New System.Drawing.Size(1024, 350)
         Me.TabPage6.TabIndex = 5
         Me.TabPage6.Text = "Department"
         Me.TabPage6.UseVisualStyleBackColor = True
@@ -426,7 +425,7 @@ Partial Class frmGroups
         Me.DataGridViewDepartment.Name = "DataGridViewDepartment"
         Me.DataGridViewDepartment.RowHeadersVisible = False
         Me.DataGridViewDepartment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridViewDepartment.Size = New System.Drawing.Size(1026, 327)
+        Me.DataGridViewDepartment.Size = New System.Drawing.Size(1018, 319)
         Me.DataGridViewDepartment.TabIndex = 48
         '
         'DataGridViewTextBoxColumn11
@@ -484,7 +483,7 @@ Partial Class frmGroups
         Me.ToolStrip4.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton8, Me.ToolStripButton9, Me.ToolStripButton10, Me.ToolStripButton16})
         Me.ToolStrip4.Location = New System.Drawing.Point(3, 3)
         Me.ToolStrip4.Name = "ToolStrip4"
-        Me.ToolStrip4.Size = New System.Drawing.Size(1026, 25)
+        Me.ToolStrip4.Size = New System.Drawing.Size(1018, 25)
         Me.ToolStrip4.TabIndex = 47
         Me.ToolStrip4.Text = "ToolStrip4"
         '
@@ -531,7 +530,7 @@ Partial Class frmGroups
         Me.TabPage7.Location = New System.Drawing.Point(4, 22)
         Me.TabPage7.Name = "TabPage7"
         Me.TabPage7.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage7.Size = New System.Drawing.Size(1028, 354)
+        Me.TabPage7.Size = New System.Drawing.Size(1024, 350)
         Me.TabPage7.TabIndex = 6
         Me.TabPage7.Text = "Team"
         Me.TabPage7.UseVisualStyleBackColor = True
@@ -552,7 +551,7 @@ Partial Class frmGroups
         Me.DataGridViewTeam.Name = "DataGridViewTeam"
         Me.DataGridViewTeam.RowHeadersVisible = False
         Me.DataGridViewTeam.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridViewTeam.Size = New System.Drawing.Size(1022, 323)
+        Me.DataGridViewTeam.Size = New System.Drawing.Size(1018, 319)
         Me.DataGridViewTeam.TabIndex = 49
         '
         'DataGridViewTextBoxColumn21
@@ -610,7 +609,7 @@ Partial Class frmGroups
         Me.ToolStrip5.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton11, Me.ToolStripButton12, Me.ToolStripButton13, Me.ToolStripButton17})
         Me.ToolStrip5.Location = New System.Drawing.Point(3, 3)
         Me.ToolStrip5.Name = "ToolStrip5"
-        Me.ToolStrip5.Size = New System.Drawing.Size(1022, 25)
+        Me.ToolStrip5.Size = New System.Drawing.Size(1018, 25)
         Me.ToolStrip5.TabIndex = 47
         Me.ToolStrip5.Text = "ToolStrip5"
         '
@@ -675,30 +674,22 @@ Partial Class frmGroups
         Me.HelpToolStripButton.Size = New System.Drawing.Size(52, 22)
         Me.HelpToolStripButton.Text = "He&lp"
         '
-        'ToolStripButton2
-        '
-        Me.ToolStripButton2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.ToolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton2.Name = "ToolStripButton2"
-        Me.ToolStripButton2.Size = New System.Drawing.Size(40, 22)
-        Me.ToolStripButton2.Text = "Close"
-        '
         'ToolStrip1
         '
         Me.ToolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel2, Me.ToolStripSeparator3, Me.ToolStripSeparator2, Me.HelpToolStripButton, Me.ToolStripButton2})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel2, Me.ToolStripSeparator3, Me.ToolStripSeparator2, Me.HelpToolStripButton})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(1036, 25)
+        Me.ToolStrip1.Size = New System.Drawing.Size(1028, 25)
         Me.ToolStrip1.TabIndex = 6
         Me.ToolStrip1.Text = "ToolStrip1"
         '
         'StatusStrip1
         '
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1, Me.ToolStripProgressBar1})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 405)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 397)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(1036, 22)
+        Me.StatusStrip1.Size = New System.Drawing.Size(1028, 22)
         Me.StatusStrip1.TabIndex = 44
         Me.StatusStrip1.Text = "StatusStrip1"
         '
@@ -730,7 +721,7 @@ Partial Class frmGroups
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1036, 427)
+        Me.ClientSize = New System.Drawing.Size(1028, 419)
         Me.ControlBox = False
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.StatusStrip1)
@@ -784,7 +775,6 @@ Partial Class frmGroups
     Friend WithEvents ToolStripSeparator3 As ToolStripSeparator
     Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
     Friend WithEvents HelpToolStripButton As ToolStripButton
-    Friend WithEvents ToolStripButton2 As ToolStripButton
     Friend WithEvents ToolStrip1 As ToolStrip
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel

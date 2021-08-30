@@ -11,7 +11,11 @@ Module Functions
         ' Replace() returns a new String and does not modify the current one
         Return stringToCleanUp.Replace(characterToRemove, "")
     End Function
-
+    Public Sub Numeric(ByVal sender As Object, ByVal e As KeyPressEventArgs)
+        If e.KeyChar <> ControlChars.Back Then
+            e.Handled = Not (Char.IsDigit(e.KeyChar) Or e.KeyChar = ".")
+        End If
+    End Sub
     Public Function BlankFields(ByVal root As Control) As Boolean
         Dim ReturnThisThing As Boolean
         Try

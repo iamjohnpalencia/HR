@@ -268,4 +268,85 @@ Module SelectQueries
         End Try
         Return PIEMPLOYEECODE
     End Function
+    Public Function GetCompany(ByVal Condition As Integer)
+        Dim CompanyDatatable As DataTable = New DataTable
+        Try
+            Dim ConnectionServer As MySqlConnection = ServerCloudCon()
+            Dim sql As String = ""
+            If Condition = 0 Then
+                sql = "SELECT * FROM tblcompany LIMIT 50"
+            ElseIf Condition = 1 Then
+                sql = "SELECT companyname FROM tblcompany"
+            End If
+            Dim cmd As MySqlCommand = New MySqlCommand(sql, ConnectionServer)
+            Dim da As MySqlDataAdapter = New MySqlDataAdapter(cmd)
+            CompanyDatatable = New DataTable
+            da.Fill(CompanyDatatable)
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+        Return CompanyDatatable
+    End Function
+
+    Public Function GetBranch(ByVal Condition As Integer)
+        Dim BranchDatatable As DataTable = New DataTable
+        Try
+            Dim ConnectionServer As MySqlConnection = ServerCloudCon()
+            Dim sql As String = ""
+            If Condition = 0 Then
+                sql = "SELECT * FROM tblbranch LIMIT 50"
+            ElseIf Condition = 1 Then
+                sql = "SELECT branch_name FROM tblbranch"
+            End If
+            Dim cmd As MySqlCommand = New MySqlCommand(sql, ConnectionServer)
+            Dim da As MySqlDataAdapter = New MySqlDataAdapter(cmd)
+            BranchDatatable = New DataTable
+            da.Fill(BranchDatatable)
+
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+        Return BranchDatatable
+    End Function
+
+    Public Function GetDept(ByVal Condition As Integer)
+        Dim DeptDatatable As DataTable = New DataTable
+        Try
+
+            Dim ConnectionServer As MySqlConnection = ServerCloudCon()
+            Dim sql As String = ""
+            If Condition = 0 Then
+                sql = "SELECT * FROM tbldepartment LIMIT 50"
+            ElseIf Condition = 1 Then
+                sql = "SELECT dep_name FROM tbldepartment"
+            End If
+            Dim cmd As MySqlCommand = New MySqlCommand(sql, ConnectionServer)
+            Dim da As MySqlDataAdapter = New MySqlDataAdapter(cmd)
+            DeptDatatable = New DataTable
+            da.Fill(DeptDatatable)
+
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+        Return DeptDatatable
+    End Function
+    Public Function GetTeam(ByVal Condition As Integer)
+        Dim TeamDatatable As DataTable = New DataTable
+        Try
+            Dim ConnectionServer As MySqlConnection = ServerCloudCon()
+            Dim sql As String = ""
+            If Condition = 0 Then
+                sql = "SELECT * FROM tblteam LIMIT 50"
+            ElseIf Condition = 1 Then
+                sql = "SELECT teamname FROM tblteam"
+            End If
+            Dim cmd As MySqlCommand = New MySqlCommand(sql, ConnectionServer)
+            Dim da As MySqlDataAdapter = New MySqlDataAdapter(cmd)
+            TeamDatatable = New DataTable
+            da.Fill(TeamDatatable)
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+        Return TeamDatatable
+    End Function
 End Module

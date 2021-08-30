@@ -19,37 +19,35 @@ Public Class Home
             MsgBox(ex.ToString)
         End Try
     End Sub
-
-
-
-
     Public newMDIchildAbout As frmAbout
     Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Try
             newMDIchildAbout = New frmAbout
             If Application.OpenForms().OfType(Of frmAbout).Any Then
             Else
+
                 formclose(closeform:=frmEmployee)
-                newMDIchildAbout.MdiParent = Me
-                newMDIchildAbout.ShowIcon = False
-                newMDIchildAbout.Show()
+                    newMDIchildAbout.MdiParent = Me
+                    newMDIchildAbout.ShowIcon = False
+                    newMDIchildAbout.Show()
+
             End If
         Catch ex As Exception
             MsgBox(ex.ToString)
         End Try
     End Sub
-
-
     Public newMDIchildEmployee As frmEmployee
     Private Sub EmployeeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EmployeeToolStripMenuItem.Click
         Try
             newMDIchildEmployee = New frmEmployee
             If Application.OpenForms().OfType(Of frmEmployee).Any Then
             Else
+
                 formclose(closeform:=frmEmployee)
-                newMDIchildEmployee.MdiParent = Me
-                newMDIchildEmployee.ShowIcon = False
-                newMDIchildEmployee.Show()
+                    newMDIchildEmployee.MdiParent = Me
+                    newMDIchildEmployee.ShowIcon = False
+                    newMDIchildEmployee.Show()
+
             End If
         Catch ex As Exception
             MsgBox(ex.ToString)
@@ -61,10 +59,12 @@ Public Class Home
             newMDIchildDashBoard = New frmDashboard
             If Application.OpenForms().OfType(Of frmDashboard).Any Then
             Else
+
                 formclose(closeform:=frmDashboard)
-                newMDIchildDashBoard.MdiParent = Me
-                newMDIchildDashBoard.ShowIcon = False
-                newMDIchildDashBoard.Show()
+                    newMDIchildDashBoard.MdiParent = Me
+                    newMDIchildDashBoard.ShowIcon = False
+                    newMDIchildDashBoard.Show()
+
             End If
         Catch ex As Exception
             MsgBox(ex.ToString)
@@ -77,10 +77,11 @@ Public Class Home
             If Application.OpenForms().OfType(Of frmGroups).Any Then
             Else
                 formclose(closeform:=frmGroups)
-                newMDIchildGroups.MdiParent = Me
-                newMDIchildGroups.ShowIcon = False
-                newMDIchildGroups.Show()
-            End If
+                    newMDIchildGroups.MdiParent = Me
+                    newMDIchildGroups.ShowIcon = False
+                    newMDIchildGroups.Show()
+
+                End If
         Catch ex As Exception
             MsgBox(ex.ToString)
         End Try
@@ -91,10 +92,12 @@ Public Class Home
             newMDIchildLogs = New UserLogs
             If Application.OpenForms().OfType(Of UserLogs).Any Then
             Else
+
                 formclose(closeform:=UserLogs)
-                newMDIchildLogs.MdiParent = Me
-                newMDIchildLogs.ShowIcon = False
-                newMDIchildLogs.Show()
+                    newMDIchildLogs.MdiParent = Me
+                    newMDIchildLogs.ShowIcon = False
+                    newMDIchildLogs.Show()
+
             End If
         Catch ex As Exception
             MsgBox(ex.ToString)
@@ -106,10 +109,12 @@ Public Class Home
             newMDIchildSettings = New frmSettings
             If Application.OpenForms().OfType(Of frmSettings).Any Then
             Else
+
                 formclose(closeform:=frmSettings)
-                newMDIchildSettings.MdiParent = Me
-                newMDIchildSettings.ShowIcon = False
-                newMDIchildSettings.Show()
+                    newMDIchildSettings.MdiParent = Me
+                    newMDIchildSettings.ShowIcon = False
+                    newMDIchildSettings.Show()
+
             End If
         Catch ex As Exception
             MsgBox(ex.ToString)
@@ -121,10 +126,12 @@ Public Class Home
             newMDIchildUsers = New frmUsers
             If Application.OpenForms().OfType(Of frmUsers).Any Then
             Else
+
                 formclose(closeform:=frmUsers)
-                newMDIchildUsers.MdiParent = Me
-                newMDIchildUsers.ShowIcon = False
-                newMDIchildUsers.Show()
+                    newMDIchildUsers.MdiParent = Me
+                    newMDIchildUsers.ShowIcon = False
+                    newMDIchildUsers.Show()
+
             End If
         Catch ex As Exception
             MsgBox(ex.ToString)
