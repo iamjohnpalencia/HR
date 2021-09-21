@@ -537,9 +537,9 @@ Partial Class frmEmployees
         'StatusStrip1
         '
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1, Me.ToolStripProgressBar1})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 708)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 336)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(1181, 22)
+        Me.StatusStrip1.Size = New System.Drawing.Size(882, 22)
         Me.StatusStrip1.TabIndex = 2
         Me.StatusStrip1.Text = "StatusStrip1"
         '
@@ -705,7 +705,7 @@ Partial Class frmEmployees
         '
         Me.GroupBoxEducational.Controls.Add(Me.DataGridViewEducationalBackground)
         Me.GroupBoxEducational.Controls.Add(Me.ToolStrip3)
-        Me.GroupBoxEducational.Location = New System.Drawing.Point(515, 339)
+        Me.GroupBoxEducational.Location = New System.Drawing.Point(900, 219)
         Me.GroupBoxEducational.Name = "GroupBoxEducational"
         Me.GroupBoxEducational.Size = New System.Drawing.Size(858, 288)
         Me.GroupBoxEducational.TabIndex = 15
@@ -793,7 +793,7 @@ Partial Class frmEmployees
         '
         Me.GroupBoxRelationshipInfo.Controls.Add(Me.DataGridViewRelationshipInfo)
         Me.GroupBoxRelationshipInfo.Controls.Add(Me.ToolStrip2)
-        Me.GroupBoxRelationshipInfo.Location = New System.Drawing.Point(254, 366)
+        Me.GroupBoxRelationshipInfo.Location = New System.Drawing.Point(906, 146)
         Me.GroupBoxRelationshipInfo.Name = "GroupBoxRelationshipInfo"
         Me.GroupBoxRelationshipInfo.Size = New System.Drawing.Size(858, 288)
         Me.GroupBoxRelationshipInfo.TabIndex = 16
@@ -884,7 +884,7 @@ Partial Class frmEmployees
         '
         Me.GroupBoxGovMandatories.Controls.Add(Me.DataGridViewGovMandatories)
         Me.GroupBoxGovMandatories.Controls.Add(Me.ToolStrip4)
-        Me.GroupBoxGovMandatories.Location = New System.Drawing.Point(38, 395)
+        Me.GroupBoxGovMandatories.Location = New System.Drawing.Point(912, 88)
         Me.GroupBoxGovMandatories.Name = "GroupBoxGovMandatories"
         Me.GroupBoxGovMandatories.Size = New System.Drawing.Size(858, 288)
         Me.GroupBoxGovMandatories.TabIndex = 17
@@ -976,7 +976,7 @@ Partial Class frmEmployees
         Me.GroupBoxEmploymentDetails.Controls.Add(Me.ComboBoxDepartment)
         Me.GroupBoxEmploymentDetails.Controls.Add(Me.ComboBoxBranch)
         Me.GroupBoxEmploymentDetails.Controls.Add(Me.ComboBoxCompany)
-        Me.GroupBoxEmploymentDetails.Location = New System.Drawing.Point(971, 633)
+        Me.GroupBoxEmploymentDetails.Location = New System.Drawing.Point(894, 306)
         Me.GroupBoxEmploymentDetails.Name = "GroupBoxEmploymentDetails"
         Me.GroupBoxEmploymentDetails.Size = New System.Drawing.Size(858, 288)
         Me.GroupBoxEmploymentDetails.TabIndex = 18
@@ -1151,7 +1151,7 @@ Partial Class frmEmployees
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1181, 730)
+        Me.ClientSize = New System.Drawing.Size(882, 358)
         Me.ControlBox = False
         Me.Controls.Add(Me.GroupBoxEducational)
         Me.Controls.Add(Me.GroupBoxRelationshipInfo)

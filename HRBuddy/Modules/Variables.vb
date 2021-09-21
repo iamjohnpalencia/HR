@@ -33,6 +33,7 @@
     'Form Employee Arrays
     Public EmployeeBasicInfoArray() As String
     Public EmployeeEmploymentDetailsArray() As String
+    Public FileArray As String()
 
     '
     Public CloseSpecificForm As Boolean = True

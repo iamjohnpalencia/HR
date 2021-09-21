@@ -6,6 +6,7 @@ Module Functions
         Dim byt2 = System.Text.Encoding.UTF8.GetString(b)
         Return byt2
     End Function
+
     Public Function RemoveCharacter(ByVal stringToCleanUp, ByVal characterToRemove)
         ' replace the target with nothing
         ' Replace() returns a new String and does not modify the current one
@@ -64,6 +65,9 @@ Module Functions
         Dim byt As Byte() = System.Text.Encoding.UTF8.GetBytes(str)
         Dim byt2 = Convert.ToBase64String(byt)
         Return byt2
+    End Function
+    Public Function FileToBase64(ByVal filename As String) As String
+        Return Convert.ToBase64String(File.ReadAllBytes(filename))
     End Function
     Public Function ImageToBase64(ByVal image As Image, ByVal format As System.Drawing.Imaging.ImageFormat) As String
         Using ms As New MemoryStream()

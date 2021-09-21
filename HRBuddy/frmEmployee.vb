@@ -1,4 +1,6 @@
 ﻿Imports System.Drawing.Imaging
+Imports System.IO
+Imports System.Text
 Imports System.Threading
 Imports MySql.Data.MySqlClient
 
@@ -12,8 +14,10 @@ Public Class frmEmployee
         ToolStripButton1.Enabled = False
         ToolStripButton3.Enabled = False
         ToolStripButton4.Enabled = False
+        ComboBoxFileCategory.SelectedIndex = 0
         If ValidCloudConnection Then
             ToolStripProgressBar1.Value = 0
+
             BackgroundWorkerpersonalinfo.WorkerReportsProgress = True
             BackgroundWorkerpersonalinfo.WorkerSupportsCancellation = True
             BackgroundWorkerpersonalinfo.RunWorkerAsync()
@@ -106,6 +110,22 @@ Public Class frmEmployee
             MsgBox(ex.ToString)
         End Try
     End Sub
+    Dim FileDatatable As DataTable
+    Private Sub LoadFiles(EmpCode)
+        Try
+            Dim ConnectionServer As MySqlConnection = ServerCloudCon()
+            Dim sql = "SELECT * FROM tblfiles WHERE empcode = '" & EmpCode & "'"
+
+            Dim cmd As MySqlCommand = New MySqlCommand(sql, ConnectionServer)
+            Dim da As MySqlDataAdapter = New MySqlDataAdapter(cmd)
+            FileDatatable = New DataTable
+            da.Fill(FileDatatable)
+
+
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+    End Sub
     Dim WorkerCancel As Boolean = False
     Dim threadlistpersonalinfo As List(Of Thread) = New List(Of Thread)
     Dim ThreadPersonal As Thread
@@ -164,6 +184,8 @@ Public Class frmEmployee
                     DataGridView1.Rows.Add(row("empcode"), row("first") & " " & row("mid") & " " & row("last"))
                 Next
             End With
+
+            DataGridView1.ClearSelection()
             If WorkerCancel Then
                 Close()
             End If
@@ -250,9 +272,11 @@ Public Class frmEmployee
                 DataGridViewPIRelationshipInfo.Rows.Clear()
                 DataGridViewPIGovMandatories.Rows.Clear()
                 DataGridViewPIEmploymentDetails.Rows.Clear()
+                DataGridViewFiles.Rows.Clear()
                 BackgroundWorkerLoadEmployeeDetails.WorkerReportsProgress = True
                 BackgroundWorkerLoadEmployeeDetails.WorkerSupportsCancellation = True
                 BackgroundWorkerLoadEmployeeDetails.RunWorkerAsync()
+
             End If
         Catch ex As Exception
             MsgBox(ex.ToString)
@@ -383,6 +407,7 @@ Public Class frmEmployee
     Private Sub BackgroundWorkerLoadEmployeeDetails_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorkerLoadEmployeeDetails.DoWork
         Try
             Dim empid = DataGridView1.SelectedRows(0).Cells(0).Value
+
             For i = 0 To 100
                 BackgroundWorkerLoadEmployeeDetails.ReportProgress(i)
                 Thread.Sleep(20)
@@ -395,29 +420,33 @@ Public Class frmEmployee
                     ThreadLoadDetails.Start()
                     threadlistloaddetails.Add(ThreadLoadDetails)
                 End If
-                If i = 20 Then
+                If i = 15 Then
                     ThreadLoadDetails = New Thread(Sub() LoadEducationalbg(empid))
                     ThreadLoadDetails.Start()
                     threadlistloaddetails.Add(ThreadLoadDetails)
                 End If
-                If i = 40 Then
+                If i = 30 Then
 
                     ThreadLoadDetails = New Thread(Sub() LoadRelationShipInfo(empid))
                     ThreadLoadDetails.Start()
                     threadlistloaddetails.Add(ThreadLoadDetails)
                 End If
-                If i = 60 Then
+                If i = 45 Then
 
                     ThreadLoadDetails = New Thread(Sub() LoadGovMandatories(empid))
                     ThreadLoadDetails.Start()
                     threadlistloaddetails.Add(ThreadLoadDetails)
                 End If
-                If i = 80 Then
+                If i = 60 Then
                     ThreadLoadDetails = New Thread(Sub() LoadEmploymentDetails(empid))
                     ThreadLoadDetails.Start()
                     threadlistloaddetails.Add(ThreadLoadDetails)
                 End If
-
+                If i = 75 Then
+                    ThreadLoadDetails = New Thread(Sub() LoadFiles(empid))
+                    ThreadLoadDetails.Start()
+                    threadlistloaddetails.Add(ThreadLoadDetails)
+                End If
             Next
             For Each t In threadlistloaddetails
                 t.Join()
@@ -509,6 +538,14 @@ Public Class frmEmployee
                     TextBoxCompany.Text = row(2)
                     TextBoxDepartment.Text = row(4)
                     TextBoxEmploymentStatus.Text = row(12)
+                Next
+            End With
+            With FileDatatable
+                For Each row As DataRow In .Rows
+                    If WorkerCancel Then
+                        Exit For
+                    End If
+                    DataGridViewFiles.Rows.Add(row("filename"))
                 Next
             End With
             DataGridView1.Enabled = True
@@ -715,6 +752,192 @@ Public Class frmEmployee
                 BackgroundWorkerpersonalinfo.WorkerSupportsCancellation = True
                 BackgroundWorkerpersonalinfo.RunWorkerAsync()
             End If
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+    End Sub
+    Dim DloadUpload As String
+    Dim ofd As New OpenFileDialog
+    Dim FileExtension As String = ""
+    Dim FileToB64 As String = ""
+    Private Sub ToolStripButton5_Click(sender As Object, e As EventArgs) Handles ToolStripButton5.Click
+
+
+        Try
+            If DataGridViewFiles.SelectedRows.Count = 0 Then
+                Exit Sub
+            Else
+                With FileDatatable
+                    Dim result() As DataRow = .Select("filename = '" & DataGridViewFiles.SelectedRows(0).Cells(0).Value & "'")
+                    For Each row As DataRow In result
+                        FileArray = {row(2), row(4), row(5)}
+                    Next
+                End With
+
+                Dim EmpFileName = FileArray(0)
+                Dim EmpFile = FileArray(1)
+                Dim EmpFileExt = FileArray(2)
+
+                Dim Base64Byte() As Byte = Convert.FromBase64String(EmpFile)
+                Dim sfd As New SaveFileDialog
+
+
+                Select Case EmpFileExt
+                    Case ".pdf"
+                        sfd.Filter = "PDF File|*.pdf"
+
+                    Case ".jpg"
+                        sfd.Filter = "JPG File|*.jpg"
+
+                    Case ".jpeg"
+                        sfd.Filter = "JPEG File|*.jpeg"
+
+                    Case ".png"
+                        sfd.Filter = "PNG File|*.png"
+
+                End Select
+
+
+                sfd.FileName = EmpFileName
+
+                If sfd.ShowDialog = 1 Then
+
+
+                    Dim c = IO.Path.GetDirectoryName(sfd.FileName).ToString & "\"
+
+                    Dim obj As FileStream = File.Create(sfd.FileName)
+                    obj.Write(Base64Byte, 0, Base64Byte.Length)
+
+                    obj.Flush()
+                    obj.Close()
+
+                    If MsgBox("Open download file ?", MsgBoxStyle.OkCancel, "Info") = MsgBoxResult.Ok Then
+                        System.Diagnostics.Process.Start(sfd.FileName)
+                    End If
+                End If
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+    End Sub
+
+    Private Sub SaveToolStripButton1_Click(sender As Object, e As EventArgs) Handles SaveToolStripButton1.Click
+        Try
+            If DataGridView1.SelectedRows.Count = 0 Then
+                MsgBox("No active employee selected", vbInformation, "Information")
+            Else
+                If ComboBoxFileCategory.SelectedIndex = -1 Then
+                    MsgBox("Select file category first", vbInformation, "Information")
+                    Exit Sub
+                ElseIf TextBoxFileName.Text = Trim(String.Empty) Then
+                    TextBoxFileName.Focus()
+                    Exit Sub
+                Else
+                    Try
+                        With ofd
+                            .Title = "Upload File Maximum of 2 Megabytes"
+                            .Filter = "JPG Images|*.jpg|JPEG Images|*.jpeg|PNG Images|*.png|PDF File |*.pdf"
+                            If .ShowDialog() = DialogResult.OK Then
+                                Dim info = New FileInfo(ofd.FileName)
+                                If info.Length > 2000000 Then
+                                    MsgBox("Max file size is 2MB", vbInformation, "Information")
+                                    Exit Sub
+                                Else
+                                    Select Case Path.GetExtension(ofd.FileName).ToLower
+                                        Case ".jpg"
+                                            FileExtension = ".jpg"
+                                        Case ".jpeg"
+                                            FileExtension = ".jpeg"
+                                        Case ".png"
+                                            FileExtension = ".png"
+                                        Case ".pdf"
+                                            FileExtension = ".pdf"
+                                    End Select
+                                    TextBoxFileLocation.Text = ofd.FileName
+                                    FileToB64 = FileToBase64(TextBoxFileLocation.Text)
+                                    DloadUpload = "Uploading please wait"
+                                    DataGridView1.Enabled = False
+                                    BackgroundWorkerFiles.WorkerReportsProgress = True
+                                    BackgroundWorkerFiles.WorkerSupportsCancellation = True
+                                    BackgroundWorkerFiles.RunWorkerAsync()
+                                End If
+                            End If
+                        End With
+                    Catch ex As Exception
+                        MsgBox(ex.Message)
+                    End Try
+                End If
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+    End Sub
+    Dim ThreadFile As Thread
+    Dim threadlistFile As List(Of Thread) = New List(Of Thread)
+    Private Sub BackgroundWorkerFiles_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorkerFiles.DoWork
+        Try
+            For i = 0 To 100
+                BackgroundWorkerFiles.ReportProgress(i)
+                Thread.Sleep(20)
+                If WorkerCancel Then
+                    Exit For
+                End If
+                If i = 0 Then
+                    ToolStripStatusLabel1.Text = DloadUpload
+                    ThreadFile = New Thread(Sub() UploadFiles(FileToB64, FileExtension))
+                    ThreadFile.Start()
+                    threadlistFile.Add(ThreadFile)
+                End If
+            Next
+            For Each t In threadlistFile
+                t.Join()
+                If (BackgroundWorkerFiles.CancellationPending) Then
+                    ' Indicate that the task was canceled.
+                    e.Cancel = True
+                    Exit For
+                End If
+            Next
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+    End Sub
+
+    Private Sub BackgroundWorkerFiles_ProgressChanged(sender As Object, e As System.ComponentModel.ProgressChangedEventArgs) Handles BackgroundWorkerFiles.ProgressChanged
+        Try
+            If WorkerCancel = False Then
+                ToolStripProgressBar1.Value = e.ProgressPercentage
+            End If
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+    End Sub
+
+    Private Sub BackgroundWorkerFiles_RunWorkerCompleted(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BackgroundWorkerFiles.RunWorkerCompleted
+        DataGridView1.Enabled = True
+        ofd.Dispose()
+        TextBoxFileName.Text = String.Empty
+        TextBoxFileLocation.Text = String.Empty
+        FileToB64 = Nothing
+        FileExtension = Nothing
+        ToolStripStatusLabel1.Text = "Complete"
+    End Sub
+    Private Sub UploadFiles(File, Extension)
+        Try
+            Dim ConnectionServer As MySqlConnection = ServerCloudCon()
+            Dim sql As String = "INSERT INTO tblfiles (`empcode`,`filename`,`category`,`file`,`file_ext`,`modifier`,`createdat`,`updatedat`,`status`) VALUES(@1,@2,@3,@4,@5,@6,@7,@8,@9)"
+            Dim cmd As MySqlCommand = New MySqlCommand(sql, ConnectionServer)
+            cmd.Parameters.Add("@1", MySqlDbType.Text).Value = DataGridView1.SelectedRows(0).Cells(0).Value.ToString
+            cmd.Parameters.Add("@2", MySqlDbType.Text).Value = TextBoxFileName.Text
+            cmd.Parameters.Add("@3", MySqlDbType.Text).Value = ComboBoxFileCategory.Text
+            cmd.Parameters.Add("@4", MySqlDbType.Text).Value = File
+            cmd.Parameters.Add("@5", MySqlDbType.Text).Value = Extension
+            cmd.Parameters.Add("@6", MySqlDbType.Text).Value = HRUsername
+            cmd.Parameters.Add("@7", MySqlDbType.Text).Value = FullDate24HR()
+            cmd.Parameters.Add("@8", MySqlDbType.Text).Value = FullDate24HR()
+            cmd.Parameters.Add("@9", MySqlDbType.Text).Value = "Active"
+            cmd.ExecuteNonQuery()
         Catch ex As Exception
             MsgBox(ex.ToString)
         End Try

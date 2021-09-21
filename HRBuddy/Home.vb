@@ -137,4 +137,21 @@ Public Class Home
             MsgBox(ex.ToString)
         End Try
     End Sub
+    Public newMDIchildAttendance As frmAttendance
+    Private Sub AttendanceToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AttendanceToolStripMenuItem.Click
+        Try
+            newMDIchildAttendance = New frmAttendance
+            If Application.OpenForms().OfType(Of frmAttendance).Any Then
+            Else
+
+                formclose(closeform:=frmAttendance)
+                newMDIchildAttendance.MdiParent = Me
+                newMDIchildAttendance.ShowIcon = False
+                newMDIchildAttendance.Show()
+
+            End If
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+    End Sub
 End Class

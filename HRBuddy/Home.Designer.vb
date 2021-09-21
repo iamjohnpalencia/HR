@@ -46,6 +46,7 @@ Partial Class Home
         Me.Label3 = New System.Windows.Forms.Label()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.AttendanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.MenuStrip2.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -68,7 +69,7 @@ Partial Class Home
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DashboardToolStripMenuItem, Me.PayrollToolStripMenuItem, Me.EmployeeToolStripMenuItem, Me.JobsToolStripMenuItem2, Me.ResumeToolStripMenuItem, Me.TaskToolStripMenuItem, Me.CalendarToolStripMenuItem3, Me.AboutToolStripMenuItem1, Me.GeneralLogsToolStripMenuItem, Me.GroupsToolStripMenuItem1, Me.WorkflowsToolStripMenuItem1})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DashboardToolStripMenuItem, Me.PayrollToolStripMenuItem, Me.EmployeeToolStripMenuItem, Me.JobsToolStripMenuItem2, Me.ResumeToolStripMenuItem, Me.TaskToolStripMenuItem, Me.CalendarToolStripMenuItem3, Me.AboutToolStripMenuItem1, Me.GeneralLogsToolStripMenuItem, Me.GroupsToolStripMenuItem1, Me.WorkflowsToolStripMenuItem1, Me.AttendanceToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 52)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(1113, 24)
@@ -227,9 +228,16 @@ Partial Class Home
         Me.ToolStripStatusLabel1.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
         Me.ToolStripStatusLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(1222, 17)
+        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(1096, 17)
         Me.ToolStripStatusLabel1.Spring = True
         Me.ToolStripStatusLabel1.Text = "Copyright 2020 All Rights Reserved - DEVGEEKPH"
+        '
+        'AttendanceToolStripMenuItem
+        '
+        Me.AttendanceToolStripMenuItem.Image = CType(resources.GetObject("AttendanceToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.AttendanceToolStripMenuItem.Name = "AttendanceToolStripMenuItem"
+        Me.AttendanceToolStripMenuItem.Size = New System.Drawing.Size(96, 20)
+        Me.AttendanceToolStripMenuItem.Text = "Attendance"
         '
         'Home
         '
@@ -283,4 +291,5 @@ Partial Class Home
     Friend WithEvents WorkflowsToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents SettingsToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents LocationToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AttendanceToolStripMenuItem As ToolStripMenuItem
 End Class
