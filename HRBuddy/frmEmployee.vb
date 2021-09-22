@@ -260,6 +260,7 @@ Public Class frmEmployee
             If Me.DataGridView1.SelectedRows.Count = 0 Then
                 MsgBox("No user to load", MsgBoxStyle.Information, "Sorry")
             Else
+                ToolStrip3.Enabled = False
                 ToolStripButton1.Enabled = False
                 ToolStripButton3.Enabled = False
                 ToolStripButton4.Enabled = False
@@ -553,6 +554,7 @@ Public Class frmEmployee
             ToolStripButton3.Enabled = True
             ToolStripButton4.Enabled = True
             DataGridView1.Enabled = True
+            ToolStrip3.Enabled = True
         Catch ex As Exception
             MsgBox(ex.ToString)
         End Try
@@ -858,6 +860,9 @@ Public Class frmEmployee
                                     FileToB64 = FileToBase64(TextBoxFileLocation.Text)
                                     DloadUpload = "Uploading please wait"
                                     DataGridView1.Enabled = False
+                                    ToolStrip3.Enabled = False
+                                    DataGridViewFiles.Enabled = False
+                                    ToolStrip2.Enabled = False
                                     BackgroundWorkerFiles.WorkerReportsProgress = True
                                     BackgroundWorkerFiles.WorkerSupportsCancellation = True
                                     BackgroundWorkerFiles.RunWorkerAsync()
@@ -876,6 +881,7 @@ Public Class frmEmployee
     End Sub
     Dim ThreadFile As Thread
     Dim threadlistFile As List(Of Thread) = New List(Of Thread)
+    Dim FileExist As Boolean = False
     Private Sub BackgroundWorkerFiles_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorkerFiles.DoWork
         Try
             For i = 0 To 100
@@ -885,10 +891,25 @@ Public Class frmEmployee
                     Exit For
                 End If
                 If i = 0 Then
-                    ToolStripStatusLabel1.Text = DloadUpload
-                    ThreadFile = New Thread(Sub() UploadFiles(FileToB64, FileExtension))
+                    ThreadFile = New Thread(Sub() CheckFileNameExist(TextBoxFileName.Text, DataGridView1.SelectedRows(0).Cells(0).Value))
                     ThreadFile.Start()
                     threadlistFile.Add(ThreadFile)
+                End If
+                For Each t In threadlistFile
+                    t.Join()
+                    If (BackgroundWorkerFiles.CancellationPending) Then
+                        ' Indicate that the task was canceled.
+                        e.Cancel = True
+                        Exit For
+                    End If
+                Next
+                If i = 50 Then
+                    If FileExist = False Then
+                        ToolStripStatusLabel1.Text = DloadUpload
+                        ThreadFile = New Thread(Sub() UploadFiles(FileToB64, FileExtension))
+                        ThreadFile.Start()
+                        threadlistFile.Add(ThreadFile)
+                    End If
                 End If
             Next
             For Each t In threadlistFile
@@ -915,13 +936,45 @@ Public Class frmEmployee
     End Sub
 
     Private Sub BackgroundWorkerFiles_RunWorkerCompleted(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BackgroundWorkerFiles.RunWorkerCompleted
-        DataGridView1.Enabled = True
-        ofd.Dispose()
-        TextBoxFileName.Text = String.Empty
-        TextBoxFileLocation.Text = String.Empty
-        FileToB64 = Nothing
-        FileExtension = Nothing
-        ToolStripStatusLabel1.Text = "Complete"
+        Try
+            If FileExist Then
+                ToolStrip3.Enabled = True
+                DataGridView1.Enabled = True
+                ToolStrip2.Enabled = True
+                DataGridViewFiles.Enabled = True
+                ofd.Dispose()
+                TextBoxFileName.Text = String.Empty
+                TextBoxFileLocation.Text = String.Empty
+                FileToB64 = Nothing
+                FileExtension = Nothing
+                ToolStripStatusLabel1.Text = "Complete"
+                MsgBox("File name already exist")
+            Else
+                BackgroundWorkerLoadFiles.WorkerReportsProgress = True
+                BackgroundWorkerLoadFiles.WorkerSupportsCancellation = True
+                BackgroundWorkerLoadFiles.RunWorkerAsync()
+            End If
+
+
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+    End Sub
+    Private Sub CheckFileNameExist(FileName, EmpCode)
+        Try
+            Dim ConnectionServer As MySqlConnection = ServerCloudCon()
+            Dim sql = "SELECT filename FROM tblfiles WHERE filename = '" & FileName & "' AND empcode = '" & EmpCode & "'"
+            Dim cmd As MySqlCommand = New MySqlCommand(sql, ConnectionServer)
+            Using reader As MySqlDataReader = cmd.ExecuteReader
+                If reader.HasRows Then
+                    FileExist = True
+                Else
+                    FileExist = False
+                End If
+            End Using
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
     End Sub
     Private Sub UploadFiles(File, Extension)
         Try
@@ -943,4 +996,156 @@ Public Class frmEmployee
         End Try
     End Sub
 
+    Private Sub ToolStripButton6_Click(sender As Object, e As EventArgs) Handles ToolStripButton6.Click
+        Try
+            If DataGridViewFiles.SelectedRows.Count = 0 Then
+                MsgBox("Select file first")
+            Else
+                Dim msg = MessageBox.Show("Are you sure you want to delete this file(s)?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                If msg = DialogResult.Yes Then
+                    DataGridView1.Enabled = False
+                    DataGridViewFiles.Enabled = False
+                    BackgroundWorkerDeleteFiles.WorkerReportsProgress = True
+                    BackgroundWorkerDeleteFiles.WorkerSupportsCancellation = True
+                    BackgroundWorkerDeleteFiles.RunWorkerAsync()
+                End If
+            End If
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+    End Sub
+    Dim ThreadDeleteFile As Thread
+    Dim threadlistDeleteFile As List(Of Thread) = New List(Of Thread)
+    Private Sub BackgroundWorkerDeleteFiles_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorkerDeleteFiles.DoWork
+        Try
+            Dim EmpCode = DataGridView1.SelectedRows(0).Cells(0).Value.ToString
+            For i = 0 To 100
+                BackgroundWorkerDeleteFiles.ReportProgress(i)
+                Thread.Sleep(20)
+                If WorkerCancel Then
+                    Exit For
+                End If
+                If i = 0 Then
+                    ToolStripStatusLabel1.Text = "Deleting please wait"
+                    ThreadDeleteFile = New Thread(Sub() DeleteFile(EmpCode))
+                    ThreadDeleteFile.Start()
+                    threadlistDeleteFile.Add(ThreadDeleteFile)
+                End If
+            Next
+            For Each t In threadlistDeleteFile
+                t.Join()
+                If (BackgroundWorkerDeleteFiles.CancellationPending) Then
+                    ' Indicate that the task was canceled.
+                    e.Cancel = True
+                    Exit For
+                End If
+            Next
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+    End Sub
+
+    Private Sub BackgroundWorkerDeleteFiles_ProgressChanged(sender As Object, e As System.ComponentModel.ProgressChangedEventArgs) Handles BackgroundWorkerDeleteFiles.ProgressChanged
+        Try
+            If WorkerCancel = False Then
+                ToolStripProgressBar1.Value = e.ProgressPercentage
+            End If
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+    End Sub
+
+    Private Sub BackgroundWorkerDeleteFiles_RunWorkerCompleted(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BackgroundWorkerDeleteFiles.RunWorkerCompleted
+        BackgroundWorkerLoadFiles.WorkerReportsProgress = True
+        BackgroundWorkerLoadFiles.WorkerSupportsCancellation = True
+        BackgroundWorkerLoadFiles.RunWorkerAsync()
+    End Sub
+    Private Sub DeleteFile(EmpCode)
+        Try
+            With DataGridViewFiles
+                Dim ConnectionServer As MySqlConnection = ServerCloudCon()
+                Dim sql As String = ""
+                Dim cmd As MySqlCommand
+                If .SelectedRows.Count > 1 Then
+                    For i As Integer = 0 To .SelectedRows.Count - 1 Step +1
+                        sql = "DELETE FROM tblfiles WHERE filename = '" & .SelectedRows(i).Cells(0).Value.ToString & "' AND empcode = '" & EmpCode & "';"
+                        cmd = New MySqlCommand(sql, ConnectionServer)
+                        cmd.ExecuteNonQuery()
+                    Next
+                Else
+                    sql = "DELETE FROM tblfiles WHERE filename = '" & .SelectedRows(0).Cells(0).Value.ToString & "' AND empcode = '" & EmpCode & "';"
+                    cmd = New MySqlCommand(sql, ConnectionServer)
+                    cmd.ExecuteNonQuery()
+                End If
+            End With
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+    End Sub
+    Dim ThreadLoadFile As Thread
+    Dim threadlistLoadFile As List(Of Thread) = New List(Of Thread)
+    Private Sub BackgroundWorkerLoadFiles_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorkerLoadFiles.DoWork
+        Try
+            Dim EmpCode = DataGridView1.SelectedRows(0).Cells(0).Value.ToString
+            For i = 0 To 100
+                BackgroundWorkerLoadFiles.ReportProgress(i)
+                Thread.Sleep(20)
+                If WorkerCancel Then
+                    Exit For
+                End If
+                If i = 0 Then
+                    ToolStripStatusLabel1.Text = "Loading please wait"
+                    ThreadLoadFile = New Thread(Sub() LoadFiles(EmpCode))
+                    ThreadLoadFile.Start()
+                    threadlistLoadFile.Add(ThreadLoadFile)
+                End If
+            Next
+            For Each t In threadlistLoadFile
+                t.Join()
+                If (BackgroundWorkerLoadFiles.CancellationPending) Then
+                    ' Indicate that the task was canceled.
+                    e.Cancel = True
+                    Exit For
+                End If
+            Next
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+    End Sub
+
+    Private Sub BackgroundWorkerLoadFiles_ProgressChanged(sender As Object, e As System.ComponentModel.ProgressChangedEventArgs) Handles BackgroundWorkerLoadFiles.ProgressChanged
+        Try
+            If WorkerCancel = False Then
+                ToolStripProgressBar1.Value = e.ProgressPercentage
+            End If
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+    End Sub
+
+    Private Sub BackgroundWorkerLoadFiles_RunWorkerCompleted(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BackgroundWorkerLoadFiles.RunWorkerCompleted
+        Try
+            DataGridViewFiles.Rows.Clear()
+            With FileDatatable
+                For Each row As DataRow In .Rows
+                    If WorkerCancel Then
+                        Exit For
+                    End If
+                    DataGridViewFiles.Rows.Add(row("filename"))
+                Next
+            End With
+            ToolStrip2.Enabled = True
+            DataGridViewFiles.Enabled = True
+            DataGridView1.Enabled = True
+            ToolStrip3.Enabled = True
+            ofd.Dispose()
+            TextBoxFileName.Text = String.Empty
+            TextBoxFileLocation.Text = String.Empty
+            FileToB64 = Nothing
+            FileExtension = Nothing
+            ToolStripStatusLabel1.Text = "Complete"
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+    End Sub
 End Class
